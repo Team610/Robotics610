@@ -25,7 +25,7 @@ import org.crescentschool.robotics.competition.subsystems.*;
  * directory.
  */
 public class Coyobot extends IterativeRobot {
-    //Testing out Github Commit
+
     Preferences constantsTable;
     Shooter shooter;
     DriveTrain driveTrain;
