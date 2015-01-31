@@ -90,8 +90,7 @@ public class Robot extends IterativeRobot {
 
 	public void teleopPeriodic() {
 
-		double angle, x, y, z, m, a, b, x2, y2, speedX, speedY;
-		boolean isPressed = false;
+		double angle, x, y, z, m,x2, y2, speedX, speedY;
 		//Get driver axes
 		x = driver.getRawAxis(0);
 		y = -driver.getRawAxis(1);

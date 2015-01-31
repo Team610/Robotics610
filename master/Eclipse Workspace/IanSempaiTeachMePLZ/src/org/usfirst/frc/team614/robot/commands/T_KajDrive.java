@@ -1,7 +1,7 @@
 package org.usfirst.frc.team614.robot.commands;
 
+import org.usfirst.frc.team614.robot.OI;
 import org.usfirst.frc.team614.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team614.robot.subsystems.OI;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
@@ -26,17 +26,17 @@ public class T_KajDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double x, y;
+    	double x, y, leftSpeed, rightSpeed;
 		// System.out.println("Left " + (-leftEncoder.getDistance()));
 		// System.out.println("Right " + rightEncoder.getDistance());
 		y = driver.getRawAxis(1);
 		x = driver.getRawAxis(2);
-
-		y = y * y * y;
-		x = x * x * x;
 		
-		driveTrain.setLeft(x + y);
-		driveTrain.setRight(x - y);
+		leftSpeed = y+x;
+		rightSpeed = y-x;
+		
+		driveTrain.setLeft(leftSpeed);
+		driveTrain.setRight(rightSpeed);
 		
 		System.out.println("Gyro: " + driveTrain.getYaw());
 		System.out.println("Left: " + driveTrain.getLeftEncoderDistance());

@@ -1,5 +1,6 @@
 package org.usfirst.frc.team614.robot.commands;
 
+import org.usfirst.frc.team614.robot.constants.ElectricalConstants;
 import org.usfirst.frc.team614.robot.subsystems.CrossBow;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -24,8 +25,8 @@ public class A_CrossBow extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	crossBow.setArm(true);
-    	crossBow.setWing(true);
+    	crossBow.setArm(ElectricalConstants.ARM_UP);
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()

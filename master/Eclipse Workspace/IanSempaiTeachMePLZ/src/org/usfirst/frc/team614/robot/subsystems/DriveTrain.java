@@ -1,5 +1,7 @@
 package org.usfirst.frc.team614.robot.subsystems;
 
+import org.usfirst.frc.team614.robot.constants.ElectricalConstants;
+
 import com.kauailabs.nav6.frc.IMUAdvanced;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -39,8 +41,9 @@ public class DriveTrain extends Subsystem {
 		leftBack = new Victor(1);
 		rightFront = new Victor(2);
 		rightBack = new Victor(3);
-		leftEncoder = new Encoder(0, 1);
+		leftEncoder = new Encoder(0, 1, true);
 		rightEncoder = new Encoder(2, 3);
+		
 
 		try {
 			serial_port = new SerialPort(57600, SerialPort.Port.kMXP);
@@ -75,18 +78,18 @@ public class DriveTrain extends Subsystem {
     }
     
     public void setRight (double speed) {
-    	rightFront.set(speed);
-    	rightBack.set(speed);
+    	rightFront.set(-speed);
+    	rightBack.set(-speed);
     }
     public void setLeft (double speed) {
     	leftFront.set(speed);
     	leftBack.set(speed);
     }
     public double getLeftEncoderDistance(){
-    	return -leftEncoder.getDistance();
+    	return leftEncoder.getDistance() / ElectricalConstants.CONVERSION_FACTOR;
     }
     public double getRightEncoderDistance(){
-    	return rightEncoder.getDistance();
+    	return rightEncoder.getDistance() / ElectricalConstants.CONVERSION_FACTOR;
     }
     public double getYaw(){
     	return imu.getYaw();

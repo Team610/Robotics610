@@ -14,18 +14,19 @@ public class A_DriveForward extends Command {
 	double lastError = 0;
 
 	int tInches;
-    public A_DriveForward(int tInches) {
+	double cap;
+    public A_DriveForward(int tInches, double cap) {
     	
     	driveTrain = DriveTrain.getInstance();
     	requires(driveTrain);
     	this.tInches = tInches;
+    	this.cap = cap;
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
     // Called just before this Command runs the first time
     protected void initialize() {
     	driveTrain.resetEncoder();
-    	driveTrain.resetGyro();
     }
 
     double avgDistance;
@@ -45,25 +46,25 @@ public class A_DriveForward extends Command {
 		System.out.println("Right " + rightDistance);
 		System.out.println("Left " + leftDistance);
 		System.out.println(driveTrain.getYaw());
+		
 		avgDistance = (leftDistance + rightDistance) / 2;
-
-		if (avgDistance < tInches) {
-			rightSpeed = (tInches - avgDistance) * 0.02;
-			leftSpeed = (tInches - avgDistance) * 0.02;
-		}
+		
+		
+	//	if (avgDistance < tInches) {
+			rightSpeed = Math.min(cap, (tInches - avgDistance) * 0.02);
+			leftSpeed = Math.min(cap, (tInches - avgDistance) * 0.02);
+		//}
 		double error = tAngle - driveTrain.getYaw();
 		double diffError = lastError - error;
 
-		if (error < -0.15) {
+		//Verify left and right
+		if (Math.abs(error) < 0.15) {
 			rightSpeed -= error * p - diffError * d;
 			leftSpeed += error * p - diffError * d;
-		} else if (error > 0.15) {
-			rightSpeed -= error * p - diffError * d;
-			leftSpeed += error * p - diffError * d;
-		}
+		} 
 
 		driveTrain.setLeft(leftSpeed);
-		driveTrain.setRight(-rightSpeed);
+		driveTrain.setRight(rightSpeed);
 		
 		lastError = error;
     }

@@ -1,7 +1,7 @@
 package org.usfirst.frc.team614.robot.commands;
 
+import org.usfirst.frc.team614.robot.OI;
 import org.usfirst.frc.team614.robot.subsystems.CrossBow;
-import org.usfirst.frc.team614.robot.subsystems.OI;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
@@ -14,7 +14,9 @@ public class T_CrossBow extends Command {
 	Joystick driver;
 	CrossBow crossBow;
     boolean isPressed = false;
+    boolean isWingsPressed = false;
     boolean solenoid = false;
+    boolean wings = false;
 
     public T_CrossBow() {
     	driver = OI.getInstance().getDriver();
@@ -34,7 +36,7 @@ public class T_CrossBow extends Command {
     	if(driver.getRawButton(2) && !isPressed){
     		solenoid = !solenoid;
     		//crossBow.setArm(solenoid);
-    		crossBow.setWing(solenoid);
+    		crossBow.setArm(solenoid);
     		isPressed = true;
     		System.out.println("toggled");
     	}
@@ -42,6 +44,7 @@ public class T_CrossBow extends Command {
     		isPressed = false;
     		
     	}
+    	
    
     }
 

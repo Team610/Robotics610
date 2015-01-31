@@ -1,0 +1,62 @@
+package org.usfirst.frc.team614.robot.subsystems;
+
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.command.Subsystem;
+
+/**
+ *
+ */
+public class CrossBow extends Subsystem {
+	
+	DoubleSolenoid armLeft;
+	DoubleSolenoid armRight;
+	DoubleSolenoid wingLeft;
+	DoubleSolenoid wingRight;
+	
+	static CrossBow instance;
+    
+    // Put methods for controlling this subsystem
+    // here. Call these from Commands.
+
+    public void initDefaultCommand() {
+        // Set the default command for a subsystem here.
+        //setDefaultCommand(new MySpecialCommand());
+    }
+    
+    private CrossBow(){
+    	armLeft = new DoubleSolenoid (0,1);
+    	armRight = new DoubleSolenoid (2,3);
+    	wingLeft = new DoubleSolenoid (4,5);
+    	wingRight = new DoubleSolenoid (6,7);
+    }
+    
+    public static CrossBow getInstance(){
+    	if(instance == null){
+    		instance = new CrossBow();
+    	}
+    	return instance;
+    }
+    
+    public void setArm(boolean down){
+    	if(down) {
+    		armLeft.set(DoubleSolenoid.Value.kForward);
+    		armRight.set(DoubleSolenoid.Value.kForward);
+    	} else {
+    		armLeft.set(DoubleSolenoid.Value.kReverse);
+    		armRight.set(DoubleSolenoid.Value.kReverse);
+    	}
+    }
+    
+    public void setWings(boolean down){
+    	if(down) {
+    		wingLeft.set(DoubleSolenoid.Value.kForward);
+    		wingRight.set(DoubleSolenoid.Value.kForward);
+    	} else {
+    		wingLeft.set(DoubleSolenoid.Value.kReverse);
+    		wingRight.set(DoubleSolenoid.Value.kReverse);
+    	}
+    }
+    
+    
+}
+

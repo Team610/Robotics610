@@ -1,0 +1,173 @@
+
+package org.usfirst.frc.team610.robot;
+
+import com.kauailabs.nav6.frc.IMUAdvanced;
+
+import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.SerialPort;
+import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
+/**
+ * The VM is configured to automatically run this class, and to call the
+ * functions corresponding to each mode, as described in the IterativeRobot
+ * documentation. If you change the name of this class or the package after
+ * creating this project, you must also update the manifest file in the resource
+ * directory.
+ */
+
+public class Robot extends IterativeRobot {
+
+    SerialPort serial_port;
+    //IMU imu;  // Alternatively, use IMUAdvanced for advanced features
+    IMUAdvanced imu;
+    Victor leftFront;
+    Victor leftBack;
+    Victor rightFront;
+    Victor rightBack;
+    Joystick driver;
+    Encoder leftEncoder;
+    Encoder rightEncoder;
+    Compressor compressor;
+    Solenoid solenoid;
+    
+    public Robot() {
+    	
+    	try {
+    	serial_port = new SerialPort(57600,SerialPort.Port.kMXP);
+		
+		// You can add a second parameter to modify the 
+		// update rate (in hz) from 4 to 100.  The default is 100.
+		// If you need to minimize CPU load, you can set it to a
+		// lower value, as shown here, depending upon your needs.
+		
+		// You can also use the IMUAdvanced class for advanced
+		// features.
+		
+		byte update_rate_hz = 50;
+		//imu = new IMU(serial_port,update_rate_hz);
+		imu = new IMUAdvanced(serial_port,update_rate_hz);
+    	} catch( Exception ex ) {
+    		
+    	}
+        if ( imu != null ) {
+            LiveWindow.addSensor("IMU", "Gyro", imu);
+        }
+    }
+    
+    double angle;
+    double lastError = 0;
+    boolean isNotDeployed = true;
+    
+    
+    /**
+     * This function is run when the robot is first started up and should be
+     * used for any initialization code.
+     */
+    public void robotInit() {
+    	angle = imu.getYaw();
+    	leftFront = new Victor(0);
+    	leftBack = new Victor(1);
+    	rightFront = new Victor(2);
+    	rightBack = new Victor(3);
+    	driver = new Joystick(0);
+    	leftEncoder = new Encoder(0,1);
+    	rightEncoder = new Encoder(2,3);
+    	compressor = new Compressor();
+    	solenoid = new Solenoid(0);
+    	
+    }
+
+    /**
+     * This function is called periodically during autonomous
+     */
+    
+    public void autonomousInit(){
+    	imu.zeroYaw();
+    	angle = imu.getYaw();
+    }
+    
+    public void autonomousPeriodic() {
+    	
+    	double p = 0.025;
+    	double d = 0.04;
+    	
+    	double leftSpeed = 0, rightSpeed = 0;
+    	leftEncoder.reset();
+    	rightEncoder.reset();
+    	double tAngle,tInches;
+        tInches = 10;
+        tAngle = 0;
+        rightSpeed = (tInches - rightEncoder.get()) * 0.03;
+        leftSpeed = (tInches - leftEncoder.get()) *0.03;
+        double error = tAngle - imu.getYaw();
+        double diffError = lastError - error;
+        System.out.println("diffError: " + diffError);
+        System.out.println("Gyro: " + imu.getYaw());
+        
+        if (isNotDeployed) {
+        	solenoid.set(true);
+        	isNotDeployed = false;
+        }
+        
+    	
+    	if(error < -0.15) {
+    	    rightSpeed -= error *p - diffError*d;
+    	    leftSpeed += error*p - diffError*d;
+    	} else if(error > 0.15) {
+    	    rightSpeed -= error*p - diffError*d;
+    	    leftSpeed += error*p - diffError*d;
+    	}
+    	
+    	
+    	setLeft(leftSpeed);
+    	setRight(-rightSpeed);
+
+    	lastError = error;
+    }
+
+    /**
+     * This function is called periodically during operator control
+     */
+    public void setLeft(double power){
+    	leftFront.set(power);
+    	leftBack.set(power);
+    }
+    public void setRight(double power){
+    	rightFront.set(power);
+    	rightBack.set(power);
+    }
+    
+    public void teleopInit(){
+    	imu.zeroYaw();
+    	
+    	
+    	
+    }
+    
+    public void teleopPeriodic() {
+    	double x, y;
+    	System.out.println("Left " + leftEncoder.getDistance());
+    	System.out.println("Right " + rightEncoder.getDistance());
+    	y = driver.getRawAxis(1);
+    	x = driver.getRawAxis(2);
+    	
+    	setLeft(x + y);
+    	setRight(x - y);
+    	
+        
+    }
+    
+    /**
+     * This function is called periodically during test mode
+     */
+    public void testPeriodic() {
+    
+    }
+    
+}

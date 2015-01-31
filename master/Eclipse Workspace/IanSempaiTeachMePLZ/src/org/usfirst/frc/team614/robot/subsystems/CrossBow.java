@@ -1,5 +1,6 @@
 package org.usfirst.frc.team614.robot.subsystems;
 
+import org.usfirst.frc.team614.robot.constants.ElectricalConstants;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -22,8 +23,8 @@ public class CrossBow extends Subsystem {
     }
     
     private CrossBow(){
-    	arm = new DoubleSolenoid (0,1);
-    	wing = new DoubleSolenoid (6,7);
+    	arm = new DoubleSolenoid (6,7);
+    	wing = new DoubleSolenoid (0,1);
     }
     
     public static CrossBow getInstance(){
@@ -33,8 +34,8 @@ public class CrossBow extends Subsystem {
     	return instance;
     }
     
-    public void setArm(boolean down){
-    	if(down) {
+    public void setArm(boolean up){
+    	if(up == ElectricalConstants.ARM_UP) {
     		arm.set(DoubleSolenoid.Value.kForward);
     		
     	} else {
@@ -43,14 +44,14 @@ public class CrossBow extends Subsystem {
     	}
     }
     
-    public void setWing(boolean down){
-    	if(down) {
-    		wing.set(DoubleSolenoid.Value.kForward);
-    		System.out.println("Arm Forward");
-    	} else {
-    		wing.set(DoubleSolenoid.Value.kReverse);
-    		System.out.println("Arm Backward");
-    	}
+    public void setWing(boolean up){
+//    	if(up == ElectricalConstants.ARM_UP) {
+//    		wing.set(DoubleSolenoid.Value.kForward);
+//    		System.out.println("Arm Forward");
+//    	} else {
+//    		wing.set(DoubleSolenoid.Value.kReverse);
+//    		System.out.println("Arm Backward");
+//    	}
     }
     
     
