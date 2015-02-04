@@ -1,0 +1,84 @@
+package org.usfirst.frc.team610.robot.commands;
+
+import org.usfirst.frc.team610.robot.OI;
+import org.usfirst.frc.team610.robot.constants.ElectricalConstants;
+import org.usfirst.frc.team610.robot.constants.InputConstants;
+import org.usfirst.frc.team610.robot.subsystems.DriveTrain;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.command.Command;
+
+/**
+ *
+ */
+public class T_KajDrive extends Command {
+
+	Joystick driver;
+	Joystick operator;
+	
+	DriveTrain driveTrain;
+	
+    public T_KajDrive() {
+    	driver = OI.getInstance().getDriver();
+    	operator = OI.getInstance().getOperator();
+    	
+    	
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
+    }
+
+    // Called just before this Command runs the first time
+    protected void initialize() {
+    }
+
+    // Called repeatedly when this Command is scheduled to run
+    protected void execute() {
+    	double leftSpeed, rightSpeed, midSpeed, x, y, z;
+    	boolean isPressed = false;
+    	boolean lock = false;
+    	
+    	x = driver.getRawAxis(InputConstants.AXIS_X);
+    	y = driver.getRawAxis(InputConstants.AXIS_Y);
+    	z = driver.getRawAxis(InputConstants.AXIS_Z);
+    	
+    	leftSpeed = x + y;
+    	rightSpeed = x - y;
+    	midSpeed = z;
+    	
+    	if(driver.getRawButton(InputConstants.BTN_A) && !isPressed){
+    		
+    	}
+//    	
+//    		if(driver.getRawButton(2) && !isPressed){
+//        		solenoid = !solenoid;
+//        		//crossBow.setArm(solenoid);
+//        		crossBow.setArm(solenoid);
+//        		isPressed = true;
+//        		System.out.println("toggled");
+//        	}
+//        	if(!driver.getRawButton(2)){
+//        		isPressed = false;
+//        		
+//        	}
+    	
+    	
+    	driveTrain.setLeft(leftSpeed);
+    	driveTrain.setRight(rightSpeed);
+    	driveTrain.setMid(midSpeed);
+    	
+    }
+
+    // Make this return true when this Command no longer needs to run execute()
+    protected boolean isFinished() {
+        return false;
+    }
+
+    // Called once after isFinished returns true
+    protected void end() {
+    }
+
+    // Called when another command which requires one or more of the same
+    // subsystems is scheduled to run
+    protected void interrupted() {
+    }
+}

@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj.command.Command;
 public class A_CrossBow extends Command {
 	
 	CrossBow crossBow;
+	boolean finished = false;
+	
 
     public A_CrossBow() {
     	crossBow = CrossBow.getInstance();
@@ -20,18 +22,21 @@ public class A_CrossBow extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	setTimeout(1);
+    	setTimeout(0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	crossBow.setArm(ElectricalConstants.ARM_UP);
+    	
+    	crossBow.setArm(ElectricalConstants.ARM_DOWN);
+    		
+    	finished = true;
     	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return isTimedOut();
+        return finished;
     }
 
     // Called once after isFinished returns true

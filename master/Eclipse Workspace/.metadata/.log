@@ -8151,3 +8151,2165 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-01-31 14:15:48.321
 !MESSAGE Installedjava
+
+!ENTRY org.eclipse.debug.ui 4 0 2015-01-31 14:50:55.116
+!MESSAGE Launch shortcut 'edu.wpi.first.wpilib.plugins.cpp.launching.deploy' enablement expression caused exception. Shortcut was removed.
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.JavaProject
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:123)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:96)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:281)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction.isApplicable(ContextualLaunchAction.java:287)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction.fillMenu(ContextualLaunchAction.java:218)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction$1.menuShown(ContextualLaunchAction.java:141)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:255)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.jface.action.ActionContributionItem.copyMenu(ActionContributionItem.java:1276)
+	at org.eclipse.jface.action.ActionContributionItem.handleShowProxy(ActionContributionItem.java:1256)
+	at org.eclipse.jface.action.ActionContributionItem.access$4(ActionContributionItem.java:1245)
+	at org.eclipse.jface.action.ActionContributionItem$8.handleEvent(ActionContributionItem.java:1218)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1471)
+	at org.eclipse.swt.widgets.Menu.menuWillOpen(Menu.java:806)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5681)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSMenu.popUpContextMenu(NSMenu.java:77)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:278)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4108)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2015-01-31 14:50:55.117
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.JavaProject
+
+!ENTRY org.eclipse.debug.ui 4 0 2015-01-31 14:50:55.117
+!MESSAGE Launch shortcut 'edu.wpi.first.wpilib.plugins.cpp.launching.simulate' enablement expression caused exception. Shortcut was removed.
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.JavaProject
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:123)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:96)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:281)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction.isApplicable(ContextualLaunchAction.java:287)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction.fillMenu(ContextualLaunchAction.java:218)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction$1.menuShown(ContextualLaunchAction.java:141)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:255)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.jface.action.ActionContributionItem.copyMenu(ActionContributionItem.java:1276)
+	at org.eclipse.jface.action.ActionContributionItem.handleShowProxy(ActionContributionItem.java:1256)
+	at org.eclipse.jface.action.ActionContributionItem.access$4(ActionContributionItem.java:1245)
+	at org.eclipse.jface.action.ActionContributionItem$8.handleEvent(ActionContributionItem.java:1218)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1471)
+	at org.eclipse.swt.widgets.Menu.menuWillOpen(Menu.java:806)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5681)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSMenu.popUpContextMenu(NSMenu.java:77)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:278)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4108)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2015-01-31 14:50:55.118
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.JavaProject
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 14:51:07.718
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 14:51:07.718
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 14:52:23.688
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 14:52:23.689
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:00:33.735
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:00:33.736
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:06:22.658
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:06:22.658
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:14:37.818
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:14:37.819
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:16:23.441
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:16:23.441
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:19:41.698
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:19:41.698
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:21:51.920
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:21:51.921
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:24:23.488
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:24:23.488
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:32:08.760
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:32:08.760
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:32:43.353
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 15:32:43.354
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:14:41.033
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:14:41.034
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:19:07.621
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:19:07.622
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:24:13.884
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:24:13.885
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:27:15.822
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:27:15.822
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:29:05.292
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:29:05.293
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:31:26.242
+!MESSAGE [org.usfirst.frc.team614.robot.commands [in src [in IanSempaiTeachMePLZ]]
+  [Working copy] T_CrossBow.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.OI
+    import org.usfirst.frc.team614.robot.subsystems.CrossBow
+    import edu.wpi.first.wpilibj.Joystick
+    import edu.wpi.first.wpilibj.command.Command
+    class T_CrossBow
+      Joystick driver
+      CrossBow crossBow
+      boolean isPressed
+      boolean isWingsPressed
+      boolean solenoid
+      boolean wings
+      T_CrossBow()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  T_KajDrive.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.OI
+    import org.usfirst.frc.team614.robot.subsystems.DriveTrain
+    import edu.wpi.first.wpilibj.Joystick
+    import edu.wpi.first.wpilibj.command.Command
+    class T_KajDrive
+      Joystick driver
+      DriveTrain driveTrain
+      T_KajDrive()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] A_DriveForward.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.subsystems.DriveTrain
+    import edu.wpi.first.wpilibj.command.Command
+    import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard
+    class A_DriveForward
+      DriveTrain driveTrain
+      double angle
+      double lastError
+      int tInches
+      double cap
+      A_DriveForward(int, double)
+      void initialize()
+      double avgDistance
+      void execute()
+      int tick
+      boolean isFinished()
+      void end()
+      void interrupted()
+  T_KajGyro.java (not open)
+  [Working copy] Auto.java
+    package org.usfirst.frc.team614.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    class Auto
+      Auto()
+  [Working copy] A_CrossBow.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.constants.ElectricalConstants
+    import org.usfirst.frc.team614.robot.subsystems.CrossBow
+    import edu.wpi.first.wpilibj.command.Command
+    class A_CrossBow
+      CrossBow crossBow
+      A_CrossBow()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:31:26.242
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:31:26.269
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:31:26.270
+!MESSAGE Project: P/IanSempaiTeachMePLZ
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:31:34.003
+!MESSAGE Class: A_RestartGyro Package: org.usfirst.frc.team614.robot.commands
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:31:51.498
+!MESSAGE [org.usfirst.frc.team614.robot.commands [in src [in IanSempaiTeachMePLZ]]
+  [Working copy] T_CrossBow.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.OI
+    import org.usfirst.frc.team614.robot.subsystems.CrossBow
+    import edu.wpi.first.wpilibj.Joystick
+    import edu.wpi.first.wpilibj.command.Command
+    class T_CrossBow
+      Joystick driver
+      CrossBow crossBow
+      boolean isPressed
+      boolean isWingsPressed
+      boolean solenoid
+      boolean wings
+      T_CrossBow()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  T_KajDrive.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.OI
+    import org.usfirst.frc.team614.robot.subsystems.DriveTrain
+    import edu.wpi.first.wpilibj.Joystick
+    import edu.wpi.first.wpilibj.command.Command
+    class T_KajDrive
+      Joystick driver
+      DriveTrain driveTrain
+      T_KajDrive()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] A_DriveForward.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.subsystems.DriveTrain
+    import edu.wpi.first.wpilibj.command.Command
+    import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard
+    class A_DriveForward
+      DriveTrain driveTrain
+      double angle
+      double lastError
+      int tInches
+      double cap
+      A_DriveForward(int, double)
+      void initialize()
+      double avgDistance
+      void execute()
+      int tick
+      boolean isFinished()
+      void end()
+      void interrupted()
+  T_KajGyro.java (not open)
+  [Working copy] Auto.java
+    package org.usfirst.frc.team614.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    class Auto
+      Auto()
+  [Working copy] A_CrossBow.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.constants.ElectricalConstants
+    import org.usfirst.frc.team614.robot.subsystems.CrossBow
+    import edu.wpi.first.wpilibj.command.Command
+    class A_CrossBow
+      CrossBow crossBow
+      A_CrossBow()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:31:51.498
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:31:51.511
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:31:51.511
+!MESSAGE Project: P/IanSempaiTeachMePLZ
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:31:58.558
+!MESSAGE Class: A_ResetGyro Package: org.usfirst.frc.team614.robot.commands
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:33:47.516
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:33:47.516
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:36:45.404
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:36:45.404
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:39:13.234
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:39:13.235
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:40:09.906
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:40:09.906
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:40:35.342
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:40:35.343
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:43:50.398
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:43:50.399
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:46:39.690
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:46:39.690
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:48:55.734
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:48:55.734
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:52:11.213
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:52:11.214
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:56:10.235
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:56:10.235
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:57:20.803
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 16:57:20.803
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:00:54.429
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:00:54.430
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:03:27.990
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:03:27.990
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:05:40.589
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:05:40.589
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:06:20.172
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:06:20.172
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:13:12.978
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:13:12.978
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:13:32.722
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:13:32.722
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:16:34.196
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:16:34.196
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:22:50.818
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:22:50.818
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:25:04.032
+!MESSAGE [org.usfirst.frc.team614.robot.commands [in src [in IanSempaiTeachMePLZ]]
+  [Working copy] T_CrossBow.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.OI
+    import org.usfirst.frc.team614.robot.subsystems.CrossBow
+    import edu.wpi.first.wpilibj.Joystick
+    import edu.wpi.first.wpilibj.command.Command
+    class T_CrossBow
+      Joystick driver
+      CrossBow crossBow
+      boolean isPressed
+      boolean isWingsPressed
+      boolean solenoid
+      boolean wings
+      T_CrossBow()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  T_KajDrive.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.OI
+    import org.usfirst.frc.team614.robot.subsystems.DriveTrain
+    import edu.wpi.first.wpilibj.Joystick
+    import edu.wpi.first.wpilibj.command.Command
+    class T_KajDrive
+      Joystick driver
+      DriveTrain driveTrain
+      T_KajDrive()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] A_DriveForward.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.subsystems.DriveTrain
+    import edu.wpi.first.wpilibj.command.Command
+    import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard
+    class A_DriveForward
+      DriveTrain driveTrain
+      double angle
+      double lastError
+      int tInches
+      double cap
+      A_DriveForward(int, double)
+      void initialize()
+      double avgDistance
+      void execute()
+      int tick
+      boolean isFinished()
+      void end()
+      void interrupted()
+  T_KajGyro.java (not open)
+  [Working copy] Auto.java
+    package org.usfirst.frc.team614.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    class Auto
+      Auto()
+  [Working copy] A_CrossBow.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.constants.ElectricalConstants
+    import org.usfirst.frc.team614.robot.subsystems.CrossBow
+    import edu.wpi.first.wpilibj.command.Command
+    class A_CrossBow
+      CrossBow crossBow
+      boolean finished
+      A_CrossBow()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] A_ResetGyro.java
+    package org.usfirst.frc.team614.robot.commands
+    import org.usfirst.frc.team614.robot.subsystems.DriveTrain
+    import edu.wpi.first.wpilibj.command.Command
+    class A_ResetGyro
+      DriveTrain driveTrain
+      A_ResetGyro()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:25:04.032
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:25:04.047
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:25:04.047
+!MESSAGE Project: P/IanSempaiTeachMePLZ
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:25:11.406
+!MESSAGE Class: A_CrossBowUp Package: org.usfirst.frc.team614.robot.commands
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:25:57.304
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-01-31 17:25:57.305
+!MESSAGE Targets: deploy, Mode: run
+!SESSION 2015-02-02 16:24:44.277 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -keyring /Users/Charles/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.cpp.product -keyring /Users/Charles/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-02-02 16:25:03.611
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-02 16:25:11.365
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-02 16:25:11.366
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-02 16:25:11.374
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-02 16:25:11.375
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-02 16:25:11.383
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-02 16:25:11.384
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-02 16:27:18.510
+!MESSAGE Project: asdf Package: org.usfirst.frc.team614.robot Project Type: edu.wpi.first.wpilib.plugins.java.wizards.newproject.JavaProjectType$2@f5b81f4
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-02 16:29:51.025
+!MESSAGE Project: asodfsadbfp9asd Package: org.usfirst.frc.team614.robot Project Type: edu.wpi.first.wpilib.plugins.java.wizards.newproject.JavaProjectType$3@14feab02
+
+!ENTRY org.eclipse.debug.ui 4 0 2015-02-02 17:44:11.233
+!MESSAGE Launch shortcut 'edu.wpi.first.wpilib.plugins.cpp.launching.deploy' enablement expression caused exception. Shortcut was removed.
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.JavaProject
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:123)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:96)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:281)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction.isApplicable(ContextualLaunchAction.java:287)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction.fillMenu(ContextualLaunchAction.java:218)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction$1.menuShown(ContextualLaunchAction.java:141)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:255)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.jface.action.ActionContributionItem.copyMenu(ActionContributionItem.java:1276)
+	at org.eclipse.jface.action.ActionContributionItem.handleShowProxy(ActionContributionItem.java:1256)
+	at org.eclipse.jface.action.ActionContributionItem.access$4(ActionContributionItem.java:1245)
+	at org.eclipse.jface.action.ActionContributionItem$8.handleEvent(ActionContributionItem.java:1218)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1471)
+	at org.eclipse.swt.widgets.Menu.menuWillOpen(Menu.java:806)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5681)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSMenu.popUpContextMenu(NSMenu.java:77)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:278)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4108)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2015-02-02 17:44:11.234
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.JavaProject
+
+!ENTRY org.eclipse.debug.ui 4 0 2015-02-02 17:44:11.235
+!MESSAGE Launch shortcut 'edu.wpi.first.wpilib.plugins.cpp.launching.simulate' enablement expression caused exception. Shortcut was removed.
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.JavaProject
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:123)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:96)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:281)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction.isApplicable(ContextualLaunchAction.java:287)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction.fillMenu(ContextualLaunchAction.java:218)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction$1.menuShown(ContextualLaunchAction.java:141)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:255)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.jface.action.ActionContributionItem.copyMenu(ActionContributionItem.java:1276)
+	at org.eclipse.jface.action.ActionContributionItem.handleShowProxy(ActionContributionItem.java:1256)
+	at org.eclipse.jface.action.ActionContributionItem.access$4(ActionContributionItem.java:1245)
+	at org.eclipse.jface.action.ActionContributionItem$8.handleEvent(ActionContributionItem.java:1218)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1471)
+	at org.eclipse.swt.widgets.Menu.menuWillOpen(Menu.java:806)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5681)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSMenu.popUpContextMenu(NSMenu.java:77)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:278)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4108)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2015-02-02 17:44:11.235
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.JavaProject
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-02 17:44:13.353
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-02 17:44:13.354
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-02 17:46:01.499
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/IanSempaiTeachMePLZ/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-02 17:46:01.499
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 10:40:27.998
+!MESSAGE Project: 2015_Competition Package: org.usfirst.frc.team614.robot Project Type: edu.wpi.first.wpilib.plugins.java.wizards.newproject.JavaProjectType$3@14feab02
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 10:41:12.064
+!MESSAGE Preferences initialized.
+
+!ENTRY org.eclipse.jface 4 0 2015-02-03 10:41:15.334
+!MESSAGE java.lang.ArrayIndexOutOfBoundsException: -1
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at java.util.ArrayList.elementData(ArrayList.java:418)
+	at java.util.ArrayList.get(ArrayList.java:431)
+	at edu.wpi.first.wpilib.plugins.core.preferences.ComboFieldEditor.getChoice(ComboFieldEditor.java:30)
+	at edu.wpi.first.wpilib.plugins.core.preferences.ComboFieldEditor.doStore(ComboFieldEditor.java:63)
+	at org.eclipse.jface.preference.FieldEditor.store(FieldEditor.java:683)
+	at org.eclipse.jface.preference.FieldEditorPreferencePage.performOk(FieldEditorPreferencePage.java:347)
+	at edu.wpi.first.wpilib.plugins.core.preferences.WPILibPreferencePage.performOk(WPILibPreferencePage.java:96)
+	at org.eclipse.jface.preference.PreferenceDialog$12.run(PreferenceDialog.java:992)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:50)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:178)
+	at org.eclipse.jface.preference.PreferenceDialog.okPressed(PreferenceDialog.java:971)
+	at org.eclipse.ui.internal.dialogs.FilteredPreferenceDialog.okPressed(FilteredPreferenceDialog.java:460)
+	at org.eclipse.ui.internal.dialogs.WorkbenchPreferenceDialog.okPressed(WorkbenchPreferenceDialog.java:174)
+	at org.eclipse.jface.preference.PreferenceDialog.buttonPressed(PreferenceDialog.java:236)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:619)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4031)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:832)
+	at org.eclipse.jface.window.Window.open(Window.java:808)
+	at org.eclipse.ui.internal.dialogs.WorkbenchPreferenceDialog.open(WorkbenchPreferenceDialog.java:221)
+	at org.eclipse.ui.internal.handlers.ShowPreferencePageHandler.execute(ShowPreferencePageHandler.java:59)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:247)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:229)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:149)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:196)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler.runCommand(CocoaUIHandler.java:715)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler.access$6(CocoaUIHandler.java:703)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler$8.widgetSelected(CocoaUIHandler.java:568)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4031)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:27.389
+!MESSAGE [org.usfirst.frc.team610.robot.subsystems [in src [in 2015_Competition]]]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:27.389
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:27.403
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:27.404
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:27.404
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:27.404
+!MESSAGE Project: P/No Project
+
+!ENTRY WPILib_Java_Robot_Development 4 0 2015-02-03 11:12:27.405
+!MESSAGE Error getting default package.
+!STACK 1
+Java Model Exception: Java Model Status [No Project does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newJavaModelException(JavaElement.java:544)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:247)
+	at org.eclipse.jdt.internal.core.Openable.openAncestors(Openable.java:505)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:241)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:557)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:294)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:280)
+	at org.eclipse.jdt.internal.core.JavaElement.getChildren(JavaElement.java:235)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.getDefaultPackage(FileTemplateWizardMainPage.java:200)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.dialogChanged(FileTemplateWizardMainPage.java:148)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.access$4(FileTemplateWizardMainPage.java:139)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage$5.modifyText(FileTemplateWizardMainPage.java:116)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:179)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1471)
+	at org.eclipse.swt.widgets.Text.setText(Text.java:2108)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.initialize(FileTemplateWizardMainPage.java:132)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.createControl(FileTemplateWizardMainPage.java:120)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:178)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:759)
+	at org.eclipse.jface.wizard.WizardDialog.setWizard(WizardDialog.java:1210)
+	at org.eclipse.jface.wizard.WizardDialog.updateForPage(WizardDialog.java:1271)
+	at org.eclipse.jface.wizard.WizardDialog.access$4(WizardDialog.java:1268)
+	at org.eclipse.jface.wizard.WizardDialog$8.run(WizardDialog.java:1257)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.wizard.WizardDialog.showPage(WizardDialog.java:1254)
+	at org.eclipse.jface.wizard.WizardDialog.nextPressed(WizardDialog.java:942)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(WizardDialog.java:434)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:619)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4031)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:832)
+	at org.eclipse.jface.window.Window.open(Window.java:808)
+	at org.eclipse.ui.internal.handlers.WizardHandler$New.executeHandler(WizardHandler.java:269)
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:290)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:247)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:229)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:149)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService.executeCommand(LegacyHandlerService.java:343)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:159)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:595)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:511)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:420)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4031)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2015-02-03 11:12:27.405
+!MESSAGE No Project does not exist
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:47.584
+!MESSAGE [org.usfirst.frc.team610.robot.subsystems [in src [in 2015_Competition]]]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:47.585
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:47.598
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:47.598
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:47.599
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:47.599
+!MESSAGE Project: P/No Project
+
+!ENTRY WPILib_Java_Robot_Development 4 0 2015-02-03 11:12:47.599
+!MESSAGE Error getting default package.
+!STACK 1
+Java Model Exception: Java Model Status [No Project does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newJavaModelException(JavaElement.java:544)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:247)
+	at org.eclipse.jdt.internal.core.Openable.openAncestors(Openable.java:505)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:241)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:557)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:294)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:280)
+	at org.eclipse.jdt.internal.core.JavaElement.getChildren(JavaElement.java:235)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.getDefaultPackage(FileTemplateWizardMainPage.java:200)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.dialogChanged(FileTemplateWizardMainPage.java:148)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.access$4(FileTemplateWizardMainPage.java:139)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage$5.modifyText(FileTemplateWizardMainPage.java:116)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:179)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1471)
+	at org.eclipse.swt.widgets.Text.setText(Text.java:2108)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.initialize(FileTemplateWizardMainPage.java:132)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.createControl(FileTemplateWizardMainPage.java:120)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:178)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:759)
+	at org.eclipse.jface.wizard.WizardDialog.setWizard(WizardDialog.java:1210)
+	at org.eclipse.jface.wizard.WizardDialog.updateForPage(WizardDialog.java:1271)
+	at org.eclipse.jface.wizard.WizardDialog.access$4(WizardDialog.java:1268)
+	at org.eclipse.jface.wizard.WizardDialog$8.run(WizardDialog.java:1257)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.wizard.WizardDialog.showPage(WizardDialog.java:1254)
+	at org.eclipse.jface.wizard.WizardDialog.nextPressed(WizardDialog.java:942)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(WizardDialog.java:434)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:619)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4031)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:832)
+	at org.eclipse.jface.window.Window.open(Window.java:808)
+	at org.eclipse.ui.internal.handlers.WizardHandler$New.executeHandler(WizardHandler.java:269)
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:290)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:247)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:229)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:149)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService.executeCommand(LegacyHandlerService.java:343)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:159)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:595)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:511)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:420)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4031)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2015-02-03 11:12:47.600
+!MESSAGE No Project does not exist
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:53.719
+!MESSAGE Project: P/No Project
+
+!ENTRY WPILib_Java_Robot_Development 4 0 2015-02-03 11:12:53.720
+!MESSAGE Error getting default package.
+!STACK 1
+Java Model Exception: Java Model Status [No Project does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newJavaModelException(JavaElement.java:544)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:247)
+	at org.eclipse.jdt.internal.core.Openable.openAncestors(Openable.java:505)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:241)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:557)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:294)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:280)
+	at org.eclipse.jdt.internal.core.JavaElement.getChildren(JavaElement.java:235)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.getDefaultPackage(FileTemplateWizardMainPage.java:200)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.dialogChanged(FileTemplateWizardMainPage.java:145)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.access$4(FileTemplateWizardMainPage.java:139)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage$3.modifyText(FileTemplateWizardMainPage.java:92)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:179)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1471)
+	at org.eclipse.swt.widgets.Combo.setText(Combo.java:1746)
+	at org.eclipse.swt.widgets.Combo.comboBoxSelectionDidChange(Combo.java:399)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5793)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+	at org.eclipse.swt.widgets.Display.applicationSendEvent(Display.java:5128)
+	at org.eclipse.swt.widgets.Display.applicationProc(Display.java:5277)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+	at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:221)
+	at org.eclipse.swt.widgets.Widget.mouseDownSuper(Widget.java:1101)
+	at org.eclipse.swt.widgets.Widget.mouseDown(Widget.java:1093)
+	at org.eclipse.swt.widgets.Control.mouseDown(Control.java:2563)
+	at org.eclipse.swt.widgets.Combo.mouseDown(Combo.java:1115)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5627)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+	at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:221)
+	at org.eclipse.swt.widgets.Widget.windowSendEvent(Widget.java:2105)
+	at org.eclipse.swt.widgets.Shell.windowSendEvent(Shell.java:2329)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5691)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+	at org.eclipse.swt.widgets.Display.applicationSendEvent(Display.java:5128)
+	at org.eclipse.swt.widgets.Display.applicationProc(Display.java:5277)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSApplication.sendEvent(NSApplication.java:128)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3655)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:832)
+	at org.eclipse.jface.window.Window.open(Window.java:808)
+	at org.eclipse.ui.internal.handlers.WizardHandler$New.executeHandler(WizardHandler.java:269)
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:290)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:247)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:229)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:149)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService.executeCommand(LegacyHandlerService.java:343)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:159)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:595)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:511)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:420)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4031)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2015-02-03 11:12:53.720
+!MESSAGE No Project does not exist
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:53.724
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:12:53.738
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:13:01.552
+!MESSAGE Class: Bumper Package: org.usfirst.frc.team610.robot.subsystems
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:22:04.102
+!MESSAGE [org.usfirst.frc.team610.robot.subsystems [in src [in 2015_Competition]]
+  [Working copy] Bumper.java
+    package org.usfirst.frc.team610.robot.subsystems
+    import edu.wpi.first.wpilibj.DoubleSolenoid
+    import edu.wpi.first.wpilibj.command.Subsystem
+    class Bumper
+      DoubleSolenoid arm
+      DoubleSolenoid wings
+      Bumper instance
+      void initDefaultCommand()
+      void CrossBow()]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:22:04.103
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:22:04.121
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:22:04.121
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:22:04.121
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:22:04.122
+!MESSAGE Project: P/No Project
+
+!ENTRY WPILib_Java_Robot_Development 4 0 2015-02-03 11:22:04.122
+!MESSAGE Error getting default package.
+!STACK 1
+Java Model Exception: Java Model Status [No Project does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newJavaModelException(JavaElement.java:544)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:247)
+	at org.eclipse.jdt.internal.core.Openable.openAncestors(Openable.java:505)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:241)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:557)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:294)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:280)
+	at org.eclipse.jdt.internal.core.JavaElement.getChildren(JavaElement.java:235)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.getDefaultPackage(FileTemplateWizardMainPage.java:200)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.dialogChanged(FileTemplateWizardMainPage.java:148)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.access$4(FileTemplateWizardMainPage.java:139)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage$5.modifyText(FileTemplateWizardMainPage.java:116)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:179)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1471)
+	at org.eclipse.swt.widgets.Text.setText(Text.java:2108)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.initialize(FileTemplateWizardMainPage.java:132)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.createControl(FileTemplateWizardMainPage.java:120)
+	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:178)
+	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:759)
+	at org.eclipse.jface.wizard.WizardDialog.setWizard(WizardDialog.java:1210)
+	at org.eclipse.jface.wizard.WizardDialog.updateForPage(WizardDialog.java:1271)
+	at org.eclipse.jface.wizard.WizardDialog.access$4(WizardDialog.java:1268)
+	at org.eclipse.jface.wizard.WizardDialog$8.run(WizardDialog.java:1257)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.wizard.WizardDialog.showPage(WizardDialog.java:1254)
+	at org.eclipse.jface.wizard.WizardDialog.nextPressed(WizardDialog.java:942)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(WizardDialog.java:434)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:619)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4031)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:832)
+	at org.eclipse.jface.window.Window.open(Window.java:808)
+	at org.eclipse.ui.internal.handlers.WizardHandler$New.executeHandler(WizardHandler.java:269)
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:290)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90)
+	at sun.reflect.GeneratedMethodAccessor46.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:247)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:229)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:149)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService.executeCommand(LegacyHandlerService.java:343)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:159)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:595)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:511)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:420)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4031)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2015-02-03 11:22:04.123
+!MESSAGE No Project does not exist
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:22:07.746
+!MESSAGE Project: P/No Project
+
+!ENTRY WPILib_Java_Robot_Development 4 0 2015-02-03 11:22:07.746
+!MESSAGE Error getting default package.
+!STACK 1
+Java Model Exception: Java Model Status [No Project does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newJavaModelException(JavaElement.java:544)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:247)
+	at org.eclipse.jdt.internal.core.Openable.openAncestors(Openable.java:505)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:241)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:557)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:294)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:280)
+	at org.eclipse.jdt.internal.core.JavaElement.getChildren(JavaElement.java:235)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.getDefaultPackage(FileTemplateWizardMainPage.java:200)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.dialogChanged(FileTemplateWizardMainPage.java:145)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage.access$4(FileTemplateWizardMainPage.java:139)
+	at edu.wpi.first.wpilib.plugins.java.wizards.file_template.FileTemplateWizardMainPage$3.modifyText(FileTemplateWizardMainPage.java:92)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:179)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1471)
+	at org.eclipse.swt.widgets.Combo.setText(Combo.java:1746)
+	at org.eclipse.swt.widgets.Combo.comboBoxSelectionDidChange(Combo.java:399)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5793)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+	at org.eclipse.swt.widgets.Display.applicationSendEvent(Display.java:5128)
+	at org.eclipse.swt.widgets.Display.applicationProc(Display.java:5277)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+	at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:221)
+	at org.eclipse.swt.widgets.Widget.mouseDownSuper(Widget.java:1101)
+	at org.eclipse.swt.widgets.Widget.mouseDown(Widget.java:1093)
+	at org.eclipse.swt.widgets.Control.mouseDown(Control.java:2563)
+	at org.eclipse.swt.widgets.Combo.mouseDown(Combo.java:1115)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5627)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+	at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:221)
+	at org.eclipse.swt.widgets.Widget.windowSendEvent(Widget.java:2105)
+	at org.eclipse.swt.widgets.Shell.windowSendEvent(Shell.java:2329)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5691)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+	at org.eclipse.swt.widgets.Display.applicationSendEvent(Display.java:5128)
+	at org.eclipse.swt.widgets.Display.applicationProc(Display.java:5277)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSApplication.sendEvent(NSApplication.java:128)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3655)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:832)
+	at org.eclipse.jface.window.Window.open(Window.java:808)
+	at org.eclipse.ui.internal.handlers.WizardHandler$New.executeHandler(WizardHandler.java:269)
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:290)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90)
+	at sun.reflect.GeneratedMethodAccessor46.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:247)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:229)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:149)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService.executeCommand(LegacyHandlerService.java:343)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:159)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:595)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:511)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:420)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4031)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2015-02-03 11:22:07.747
+!MESSAGE No Project does not exist
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:22:07.748
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:22:07.762
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:23:54.030
+!MESSAGE [org.usfirst.frc.team614.robot.subsystems [in src [in IanSempaiTeachMePLZ]]
+  DriveTrain.java
+    package org.usfirst.frc.team614.robot.subsystems
+    import org.usfirst.frc.team614.robot.constants.ElectricalConstants
+    import com.kauailabs.nav6.frc.IMUAdvanced
+    import edu.wpi.first.wpilibj.DoubleSolenoid
+    import edu.wpi.first.wpilibj.Encoder
+    import edu.wpi.first.wpilibj.SerialPort
+    import edu.wpi.first.wpilibj.Victor
+    import edu.wpi.first.wpilibj.command.Subsystem
+    import edu.wpi.first.wpilibj.livewindow.LiveWindow
+    class DriveTrain
+      SerialPort serial_port
+      IMUAdvanced imu
+      Victor leftFront
+      Victor leftBack
+      Victor rightFront
+      Victor rightBack
+      Encoder leftEncoder
+      Encoder rightEncoder
+      DoubleSolenoid solenoid1
+      DoubleSolenoid solenoid2
+      DriveTrain instance
+      void initDefaultCommand()
+      DriveTrain()
+      static DriveTrain getInstance()
+      void setRight(double)
+      void setLeft(double)
+      double getLeftEncoderDistance()
+      double getRightEncoderDistance()
+      double getYaw()
+      void resetEncoder()
+      void resetGyro()
+  [Working copy] CrossBow.java
+    package org.usfirst.frc.team614.robot.subsystems
+    import org.usfirst.frc.team614.robot.constants.ElectricalConstants
+    import edu.wpi.first.wpilibj.DoubleSolenoid
+    import edu.wpi.first.wpilibj.command.Subsystem
+    class CrossBow
+      DoubleSolenoid arm
+      DoubleSolenoid wing
+      CrossBow instance
+      void initDefaultCommand()
+      CrossBow()
+      static CrossBow getInstance()
+      void setArm(boolean)
+      void setWing(boolean)]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:23:54.030
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:23:54.042
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:23:54.043
+!MESSAGE Project: P/IanSempaiTeachMePLZ
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:23:58.394
+!MESSAGE Class: Test Package: org.usfirst.frc.team614.robot.subsystems
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:39:41.852
+!MESSAGE Project: 2015_Competition Package: org.usfirst.frc.team610.robot Project Type: edu.wpi.first.wpilib.plugins.java.wizards.newproject.JavaProjectType$3@14feab02
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:44:23.248
+!MESSAGE [org.usfirst.frc.team610.robot.subsystems [in src [in 2015_Competition]]
+  [Working copy] Bumper.java
+    package org.usfirst.frc.team610.robot.subsystems
+    import edu.wpi.first.wpilibj.DoubleSolenoid
+    import edu.wpi.first.wpilibj.command.Subsystem
+    class Bumper
+      DoubleSolenoid arm
+      DoubleSolenoid wings
+      Bumper instance
+      Bumper()
+      void initDefaultCommand()
+      static Bumper getInstance()
+      void setArm(boolean)
+      void setWings(boolean)
+  ExampleSubsystem.java
+    package org.usfirst.frc.team610.robot.subsystems
+    import edu.wpi.first.wpilibj.command.Subsystem
+    class ExampleSubsystem
+      void initDefaultCommand()]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:44:23.248
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:44:23.284
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 11:44:23.285
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 14:12:09.758
+!MESSAGE [org.usfirst.frc.team610.robot.subsystems [in src [in 2015_Competition]]
+  [Working copy] Bumper.java
+    package org.usfirst.frc.team610.robot.subsystems
+    import edu.wpi.first.wpilibj.DoubleSolenoid
+    import edu.wpi.first.wpilibj.command.Subsystem
+    class Bumper
+      DoubleSolenoid arm
+      DoubleSolenoid wings
+      Bumper instance
+      Bumper()
+      void initDefaultCommand()
+      static Bumper getInstance()
+      void setArm(boolean)
+      void setWings(boolean)
+  ExampleSubsystem.java
+    package org.usfirst.frc.team610.robot.subsystems
+    import edu.wpi.first.wpilibj.command.Subsystem
+    class ExampleSubsystem
+      void initDefaultCommand()]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 14:12:09.758
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 14:12:09.769
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 14:12:09.769
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 14:14:09.932
+!MESSAGE Class: DriveTrain Package: org.usfirst.frc.team610.robot.subsystems
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 14:32:37.548
+!MESSAGE [org.usfirst.frc.team610.robot.commands [in src [in 2015_Competition]]
+  ExampleCommand.java
+    package org.usfirst.frc.team610.robot.commands
+    import edu.wpi.first.wpilibj.command.Command
+    import org.usfirst.frc.team610.robot.Robot
+    class ExampleCommand
+      ExampleCommand()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 14:32:37.549
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 14:32:37.573
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 14:32:37.574
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 14:32:44.778
+!MESSAGE Class: T_KajDrive Package: org.usfirst.frc.team610.robot.commands
+!SESSION 2015-02-03 15:00:57.597 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -keyring /Users/Charles/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.cpp.product -keyring /Users/Charles/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-02-03 15:01:01.152
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.net 1 0 2015-02-03 15:01:04.167
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 15:01:11.564
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 15:01:11.564
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 15:01:11.571
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 15:01:11.572
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 15:01:11.579
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 15:01:11.580
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 15:17:03.550
+!MESSAGE [org.usfirst.frc.team610.robot.commands [in src [in 2015_Competition]]
+  ExampleCommand.java
+    package org.usfirst.frc.team610.robot.commands
+    import edu.wpi.first.wpilibj.command.Command
+    import org.usfirst.frc.team610.robot.Robot
+    class ExampleCommand
+      ExampleCommand()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] T_KajDrive.java
+    package org.usfirst.frc.team610.robot.commands
+    import org.usfirst.frc.team610.robot.OI
+    import org.usfirst.frc.team610.robot.constants.ElectricalConstants
+    import org.usfirst.frc.team610.robot.constants.InputConstants
+    import org.usfirst.frc.team610.robot.subsystems.DriveTrain
+    import edu.wpi.first.wpilibj.Joystick
+    import edu.wpi.first.wpilibj.command.Command
+    class T_KajDrive
+      Joystick driver
+      Joystick operator
+      DriveTrain driveTrain
+      T_KajDrive()
+      double error
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 15:17:03.550
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 15:17:03.560
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 15:17:03.561
+!MESSAGE Project: P/2015_Competition
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 15:17:15.078
+!MESSAGE Class: D_SensorReadings Package: org.usfirst.frc.team610.robot.commands
+!SESSION 2015-02-03 17:06:05.467 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -keyring /Users/Charles/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.cpp.product -keyring /Users/Charles/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-02-03 17:06:55.551
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 17:07:03.676
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 17:07:03.677
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 17:07:03.686
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 17:07:03.687
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 17:07:03.709
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 17:07:03.709
+!MESSAGE Installedjava
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 18:02:02.993
+!MESSAGE Preferences initialized.
+
+!ENTRY org.eclipse.debug.ui 4 0 2015-02-03 18:02:06.387
+!MESSAGE Launch shortcut 'edu.wpi.first.wpilib.plugins.cpp.launching.deploy' enablement expression caused exception. Shortcut was removed.
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.JavaProject
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:123)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:96)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:281)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction.isApplicable(ContextualLaunchAction.java:287)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction.fillMenu(ContextualLaunchAction.java:218)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction$1.menuShown(ContextualLaunchAction.java:141)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:255)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.jface.action.ActionContributionItem.copyMenu(ActionContributionItem.java:1276)
+	at org.eclipse.jface.action.ActionContributionItem.handleShowProxy(ActionContributionItem.java:1256)
+	at org.eclipse.jface.action.ActionContributionItem.access$4(ActionContributionItem.java:1245)
+	at org.eclipse.jface.action.ActionContributionItem$8.handleEvent(ActionContributionItem.java:1218)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1471)
+	at org.eclipse.swt.widgets.Menu.menuWillOpen(Menu.java:806)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5681)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSMenu.popUpContextMenu(NSMenu.java:77)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:278)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4108)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2015-02-03 18:02:06.388
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.JavaProject
+
+!ENTRY org.eclipse.debug.ui 4 0 2015-02-03 18:02:06.388
+!MESSAGE Launch shortcut 'edu.wpi.first.wpilib.plugins.cpp.launching.simulate' enablement expression caused exception. Shortcut was removed.
+!STACK 1
+org.eclipse.core.runtime.CoreException: No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.JavaProject
+	at org.eclipse.core.internal.expressions.TypeExtensionManager.getProperty(TypeExtensionManager.java:123)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:96)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:281)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction.isApplicable(ContextualLaunchAction.java:287)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction.fillMenu(ContextualLaunchAction.java:218)
+	at org.eclipse.debug.ui.actions.ContextualLaunchAction$1.menuShown(ContextualLaunchAction.java:141)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:255)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.jface.action.ActionContributionItem.copyMenu(ActionContributionItem.java:1276)
+	at org.eclipse.jface.action.ActionContributionItem.handleShowProxy(ActionContributionItem.java:1256)
+	at org.eclipse.jface.action.ActionContributionItem.access$4(ActionContributionItem.java:1245)
+	at org.eclipse.jface.action.ActionContributionItem$8.handleEvent(ActionContributionItem.java:1218)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1471)
+	at org.eclipse.swt.widgets.Menu.menuWillOpen(Menu.java:806)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5681)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSMenu.popUpContextMenu(NSMenu.java:77)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:278)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4108)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SUBENTRY 1 org.eclipse.core.expressions 4 201 2015-02-03 18:02:06.389
+!MESSAGE No property tester contributes a property org.eclipse.core.resources.projectNature to type class org.eclipse.jdt.internal.core.JavaProject
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:02:07.633
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/2015_Competition/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:02:07.633
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:05:33.052
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/2015_Competition/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:05:33.052
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:06:18.112
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/2015_Competition/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:06:18.112
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-03 18:06:37.405
+!MESSAGE Preferences initialized.
+
+!ENTRY org.eclipse.jface 4 0 2015-02-03 18:06:39.891
+!MESSAGE java.lang.ArrayIndexOutOfBoundsException: -1
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at java.util.ArrayList.elementData(ArrayList.java:418)
+	at java.util.ArrayList.get(ArrayList.java:431)
+	at edu.wpi.first.wpilib.plugins.core.preferences.ComboFieldEditor.getChoice(ComboFieldEditor.java:30)
+	at edu.wpi.first.wpilib.plugins.core.preferences.ComboFieldEditor.doStore(ComboFieldEditor.java:63)
+	at org.eclipse.jface.preference.FieldEditor.store(FieldEditor.java:683)
+	at org.eclipse.jface.preference.FieldEditorPreferencePage.performOk(FieldEditorPreferencePage.java:347)
+	at edu.wpi.first.wpilib.plugins.core.preferences.WPILibPreferencePage.performOk(WPILibPreferencePage.java:96)
+	at org.eclipse.jface.preference.PreferenceDialog$12.run(PreferenceDialog.java:992)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:50)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:178)
+	at org.eclipse.jface.preference.PreferenceDialog.okPressed(PreferenceDialog.java:971)
+	at org.eclipse.ui.internal.dialogs.FilteredPreferenceDialog.okPressed(FilteredPreferenceDialog.java:460)
+	at org.eclipse.ui.internal.dialogs.WorkbenchPreferenceDialog.okPressed(WorkbenchPreferenceDialog.java:174)
+	at org.eclipse.jface.preference.PreferenceDialog.buttonPressed(PreferenceDialog.java:236)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:619)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4031)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:832)
+	at org.eclipse.jface.window.Window.open(Window.java:808)
+	at org.eclipse.ui.internal.dialogs.WorkbenchPreferenceDialog.open(WorkbenchPreferenceDialog.java:221)
+	at org.eclipse.ui.internal.handlers.ShowPreferencePageHandler.execute(ShowPreferencePageHandler.java:59)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:294)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:247)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:229)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:149)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:196)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler.runCommand(CocoaUIHandler.java:715)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler.access$6(CocoaUIHandler.java:703)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler$8.widgetSelected(CocoaUIHandler.java:568)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4188)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4031)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:06:52.726
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/2015_Competition/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:06:52.727
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:08:02.926
+!MESSAGE Project: 610 KajDrive Package: org.usfirst.frc.team610.robot Project Type: edu.wpi.first.wpilib.plugins.java.wizards.newproject.JavaProjectType$2@40574edf
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:12:46.683
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:12:46.683
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:14:20.229
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:14:20.229
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:20:22.389
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:20:22.389
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:23:42.257
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:23:42.257
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:25:26.082
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:25:26.082
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:28:31.352
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:28:31.352
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:29:31.837
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:29:31.837
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:34:17.539
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:34:17.539
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:36:21.364
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:36:21.364
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:41:32.875
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:41:32.876
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:50:56.832
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:50:56.832
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:53:46.275
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:53:46.276
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:58:17.823
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 18:58:17.823
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:01:53.129
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:01:53.129
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:04:40.278
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:04:40.278
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:12:44.333
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:12:44.333
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:13:52.225
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:13:52.225
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:14:32.250
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:14:32.251
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:15:36.835
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:15:36.835
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:17:02.725
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:17:02.725
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:19:26.230
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:19:26.230
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:22:19.466
+!MESSAGE Running ant file: /Users/Charles/Documents/Robotics610/master/Eclipse Workspace/610 KajDrive/build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-03 19:22:19.466
+!MESSAGE Targets: deploy, Mode: run
+!SESSION 2015-02-04 13:58:33.188 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -keyring /Users/Charles/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.cpp.product -keyring /Users/Charles/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-02-04 13:58:40.559
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-04 13:58:48.323
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-04 13:58:48.324
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-04 13:58:48.326
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-04 13:58:48.327
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-04 13:58:48.334
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-04 13:58:48.335
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2015-02-04 14:00:04.814
+!MESSAGE Project: 2015-Competition Package: org.usfirst.frc.team610.robot Project Type: edu.wpi.first.wpilib.plugins.java.wizards.newproject.JavaProjectType$3@60f9fb56
+!SESSION 2015-02-04 14:03:40.960 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -keyring /Users/Charles/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.cpp.product -keyring /Users/Charles/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-02-04 14:03:48.642
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-04 14:03:57.689
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-04 14:03:57.690
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-04 14:03:57.707
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-04 14:03:57.708
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-04 14:03:57.755
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2015-02-04 14:03:57.792
+!MESSAGE Installedjava

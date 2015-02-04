@@ -37,7 +37,7 @@ public class DriveTrain extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     private DriveTrain(){
-		leftFront = new Victor(0);
+		leftFront = new Victor(ElectricalConstants.LEFT_FRONT);
 		leftBack = new Victor(1);
 		rightFront = new Victor(2);
 		rightBack = new Victor(3);

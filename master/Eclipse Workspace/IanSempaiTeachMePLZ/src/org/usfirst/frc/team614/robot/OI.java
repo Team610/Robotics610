@@ -15,6 +15,7 @@ public class OI extends Subsystem {
 
 	private OI(){
 		driver = new Joystick(0);
+		
 	}
 	
 	public static OI getInstance(){

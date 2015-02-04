@@ -9,10 +9,14 @@ public class Auto extends CommandGroup {
     
     public  Auto() {
     	
-    	addSequential(new A_DriveForward(48, 1));
-    	addSequential(new A_CrossBow());
-    	addSequential(new A_DriveForward(-12, 0.2));
-    	addSequential(new A_DriveForward(-36, 0.8));
+    	addSequential(new A_ResetGyro());
+    	addParallel(new A_CrossBow());
+    	addSequential(new A_DriveForward(51, 1));
+//    	addParallel(new A_DriveForward(0,1));
+    	addSequential(new A_DriveForward(-100, .5));
+    	addSequential(new A_CrossBowUp());
+    	addSequential(new A_DriveForward(49, 1));
+    	
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
