@@ -8,4 +8,5 @@
 <fullyQualifiedTypeName name="org.usfirst.frc.team614.robot.constants.ElectricalConstants"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team610.robot.constants.InputConstants"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Encoder"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team610.robot.subsystems.DriveTrain"/>
 </qualifiedTypeNameHistroy>
