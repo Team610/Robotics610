@@ -8,5 +8,6 @@ public class InputConstants {
 	public static final int BTN_Y = 4;
 	public static final int AXIS_X = 2;
 	public static final int AXIS_Y = 1;
-	public static final int AXIS_Z = 3;
+	public static final int AXIS_Z = 0;
+	
 }

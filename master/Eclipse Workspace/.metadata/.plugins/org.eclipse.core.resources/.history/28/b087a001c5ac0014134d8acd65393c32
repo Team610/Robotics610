@@ -1,0 +1,109 @@
+package org.usfirst.frc.team610.robot.commands;
+
+import org.usfirst.frc.team610.robot.constants.ElectricalConstants;
+import org.usfirst.frc.team610.robot.subsystems.DriveTrain;
+
+import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+/**
+ *
+ */
+public class A_Drive extends Command {
+	
+	DriveTrain driveTrain;
+	double tInches;
+	double cap;
+	double error;
+	double lastError;
+	double tAngle = 0;
+	int tick = 0;
+
+    public A_Drive(double tInches, double cap) {
+    	
+    	driveTrain = DriveTrain.getInstance();
+    	this.tInches = tInches;
+    	this.cap = cap;
+    	
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
+    }
+
+    // Called just before this Command runs the first time
+    protected void initialize() {
+    	driveTrain.resetEncoders();
+    	setTimeout(0.5);
+    	
+    	System.out.println("A_Drive");
+    	
+    }
+
+    // Called repeatedly when this Command is scheduled to run
+    protected void execute() {
+    	double leftSpeed, rightSpeed, difference;
+    	double p = ElectricalConstants.GYRO_P;
+    	double d = ElectricalConstants.GYRO_D;
+    	double currentAngle = driveTrain.getYaw();
+    	
+    	while (currentAngle < -180) {
+			currentAngle += 360;
+		}
+		while (currentAngle > 180) {
+			currentAngle -= 360;
+		}
+		
+		error = tAngle - currentAngle;
+    	
+		difference = error - lastError;
+		
+		leftSpeed = (tInches - driveTrain.getAvgDistance());
+		rightSpeed = (tInches - driveTrain.getAvgDistance());
+		//leftSpeed = Math.min(cap, (tInches - driveTrain.getAvgDistance()) * ElectricalConstants.ENCODER_P);
+	//rightSpeed = Math.min(cap, (tInches - driveTrain.getAvgDistance()) * ElectricalConstants.ENCODER_P);
+		SmartDashboard.putNumber("leftSpeed: ",leftSpeed);
+
+		SmartDashboard.putNumber("Left: ", driveTrain.getLeftDistance());
+		SmartDashboard.putNumber("right: ", driveTrain.getRightDistance());
+		
+		//leftSpeed += error * p + difference * d;
+    	//rightSpeed -= error * p + difference * d;
+    	
+		//leftSpeed = 0;
+		//rightSpeed = 0;
+		
+    	driveTrain.setLeft(leftSpeed);
+    	driveTrain.setRight(rightSpeed);
+    	
+		lastError = error;
+    }
+
+    // Make this return true when this Command no longer needs to run execute()
+    protected boolean isFinished() {
+    	if(tInches == 0){
+    		return isTimedOut();
+    	} else {
+	    	if(Math.abs(driveTrain.getAvgDistance() - tInches) < 5){
+	    		tick++;
+	    	} else {
+	    		tick = 0;
+	    	}
+    	
+	    	if (tick > 20){
+	    		driveTrain.setLeft(0);
+	    		driveTrain.setRight(0);
+	    		return true;
+	    	} else {
+	    		return false;
+	    	}
+    	}
+    }
+
+    // Called once after isFinished returns true
+    protected void end() {
+    }
+
+    // Called when another command which requires one or more of the same
+    // subsystems is scheduled to run
+    protected void interrupted() {
+    }
+}

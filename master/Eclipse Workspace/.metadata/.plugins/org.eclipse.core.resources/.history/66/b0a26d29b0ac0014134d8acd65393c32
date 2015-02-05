@@ -1,0 +1,106 @@
+package org.usfirst.frc.team610.robot.commands;
+
+import org.usfirst.frc.team610.robot.OI;
+import org.usfirst.frc.team610.robot.constants.ElectricalConstants;
+import org.usfirst.frc.team610.robot.constants.InputConstants;
+import org.usfirst.frc.team610.robot.subsystems.DriveTrain;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+/**
+ *
+ */
+public class T_KajDrive extends Command {
+
+	Joystick driver;
+	Joystick operator;
+	
+	DriveTrain driveTrain;
+	
+    public T_KajDrive() {
+    	driver = OI.getInstance().getDriver();
+    	operator = OI.getInstance().getOperator();
+    	driveTrain = DriveTrain.getInstance();
+    	
+    	
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
+    }
+
+    
+    
+    // Called just before this Command runs the first time
+    double error;
+    protected void initialize() {
+    	driveTrain.zeroYaw();
+    	error = driveTrain.getYaw();
+    	driveTrain.resetEncoders();
+    }
+
+    // Called repeatedly when this Command is scheduled to run
+    
+    double lastError;
+    double intergral = 0;
+    protected void execute() {
+    	double leftSpeed, rightSpeed, midSpeed, x, y, z, difference;
+    	double p = 0.0;
+    	double d = 0.0;
+    	double i = 0.00;
+    	double currentAngle = driveTrain.getYaw();
+    		
+    	while (currentAngle < -180) {
+			currentAngle += 360;
+		}
+		while (currentAngle > 180) {
+			currentAngle -= 360;
+		}
+    	
+		difference = currentAngle - lastError;
+		intergral += difference;
+		
+    	x = driver.getRawAxis(InputConstants.AXIS_X);
+    	y = -driver.getRawAxis(InputConstants.AXIS_Y);
+    	z = -driver.getRawAxis(InputConstants.AXIS_Z);
+    	
+    	leftSpeed = y + x;
+    	rightSpeed = y - x;
+    	midSpeed = z;
+    	
+    	SmartDashboard.putNumber("RightSpeed", rightSpeed);
+    	SmartDashboard.putNumber("LeftSpeed", leftSpeed);
+    	
+    	if(driver.getRawAxis(InputConstants.AXIS_X) < 0.05){
+        	error = driveTrain.getYaw();
+    	}
+    	
+    	leftSpeed -= error * p - difference * d - intergral * i;
+    	rightSpeed += error * p - difference * d - intergral * i;	
+    	
+    	SmartDashboard.putNumber("RightSpeed1", rightSpeed);
+    	SmartDashboard.putNumber("leftSpeed1", leftSpeed);
+		
+    	
+    	driveTrain.setLeft(leftSpeed);
+    	driveTrain.setRight(rightSpeed);
+    	driveTrain.setMid(midSpeed);
+    	
+    	lastError = error;
+    	
+    }
+
+    // Make this return true when this Command no longer needs to run execute()
+    protected boolean isFinished() {
+        return false;
+    }
+
+    // Called once after isFinished returns true
+    protected void end() {
+    }
+
+    // Called when another command which requires one or more of the same
+    // subsystems is scheduled to run
+    protected void interrupted() {
+    }
+}

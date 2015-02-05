@@ -33,11 +33,11 @@ public class DriveTrain extends Subsystem {
 		rightFront = new Talon(ElectricalConstants.TALON_RIGHT_FRONT);
 		rightBack = new Talon(ElectricalConstants.TALON_RIGHT_BACK);
 		leftFront = new Talon(ElectricalConstants.TALON_LEFT_FRONT);
-		leftBack = new Talon(ElectricalConstants.TALON_LEFT_FRONT);
+		leftBack = new Talon(ElectricalConstants.TALON_LEFT_BACK);
 		mid = new Talon(ElectricalConstants.TALON_MID);
 		
 		//Encoders
-		left = new Encoder(2,3);
+		left = new Encoder(2,3, true);
 		right = new Encoder(0,1);
 		
 		
@@ -94,18 +94,18 @@ public class DriveTrain extends Subsystem {
 	//Get Average Encoder
 	public double getAvgDistance(){
 		double average, a, b;
-		a = left.getDistance() * ElectricalConstants.ENCODER_INCHES ;
-		b = right.getDistance() * ElectricalConstants.ENCODER_INCHES;
-		average = (a+b)/2;
+		a = left.getDistance() / ElectricalConstants.ENCODER_INCHES ;
+		b = right.getDistance() / ElectricalConstants.ENCODER_INCHES;
+		average = (a + b) / 2;
 		return average;
 	}
 	
 	//Get Right & Left Encoders
 	public double getRightDistance(){
-		return right.getDistance() * ElectricalConstants.ENCODER_INCHES;
+		return right.getDistance() / ElectricalConstants.ENCODER_INCHES;
 	}
 	public double getLeftDistance(){
-		return left.getDistance() * ElectricalConstants.ENCODER_INCHES;
+		return left.getDistance() / ElectricalConstants.ENCODER_INCHES;
 	}
 	
 	//Reset encoders

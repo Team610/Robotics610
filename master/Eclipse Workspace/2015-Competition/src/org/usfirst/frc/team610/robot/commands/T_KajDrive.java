@@ -7,6 +7,7 @@ import org.usfirst.frc.team610.robot.subsystems.DriveTrain;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -32,55 +33,57 @@ public class T_KajDrive extends Command {
     
     // Called just before this Command runs the first time
     double error;
+    double tAngle;
     protected void initialize() {
     	driveTrain.zeroYaw();
     	error = driveTrain.getYaw();
+    	driveTrain.resetEncoders();
+    	tAngle = driveTrain.getYaw();
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     
     double lastError;
+    double intergral = 0;
     protected void execute() {
     	double leftSpeed, rightSpeed, midSpeed, x, y, z, difference;
-    	double p = 0.025;
-    	double d = 0.07;
-    	boolean isPressed = false;
-    	boolean lock = false;
+    	double p = ElectricalConstants.GYRO_P;
+    	double d = ElectricalConstants.GYRO_D;
     	double currentAngle = driveTrain.getYaw();
-    	
+    		
     	while (currentAngle < -180) {
 			currentAngle += 360;
 		}
 		while (currentAngle > 180) {
 			currentAngle -= 360;
 		}
+		
+		error = tAngle - currentAngle;
     	
-		difference = currentAngle - lastError;
-
+		difference = error - lastError;
 		
     	x = driver.getRawAxis(InputConstants.AXIS_X);
-    	y = driver.getRawAxis(InputConstants.AXIS_Y);
-    	z = driver.getRawAxis(InputConstants.AXIS_Z);
+    	y = -driver.getRawAxis(InputConstants.AXIS_Y);
+    	z = -driver.getRawAxis(InputConstants.AXIS_Z);
     	
-    	leftSpeed = x + y;
-    	rightSpeed = x - y;
+    	x = x * x * x;
+    	z = z * z * z;
+    	
+    	
+    	leftSpeed = y + x;
+    	rightSpeed = y - x;
     	midSpeed = z;
     	
-    	if(driver.getRawButton(InputConstants.BTN_A) && !isPressed){
-    		lock = !lock;
-    		isPressed = true;
-    	}
-    	if(!driver.getRawButton(InputConstants.BTN_A)){
-    		isPressed = false;
-    	}
+
+//    	
+//    	if(driver.getRawAxis(InputConstants.AXIS_X) > 0.05){
+//        	error = driveTrain.getYaw();
+//    	}
     	
-    	if(lock){
-    		if(driver.getRawAxis(InputConstants.AXIS_X) > 0.1){
-        		error = driveTrain.getYaw();
-    		}
-    		leftSpeed -= error * p - difference * d;
-    		rightSpeed += error * p - difference * d;	
-    	}
+    	leftSpeed -= error * p + difference * d;
+    	rightSpeed += error * p + difference * d;	
+    	
     	
     	driveTrain.setLeft(leftSpeed);
     	driveTrain.setRight(rightSpeed);
