@@ -33,7 +33,6 @@ public class D_SensorReadings extends Command {
 		SmartDashboard.putNumber("Left Distance", driveTrain.getLeftDistance());
 		SmartDashboard.putNumber("Gyro", driveTrain.getYaw());
     	
-    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
