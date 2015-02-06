@@ -62,12 +62,24 @@ public class CrossBow extends Subsystem {
     		System.out.println("Arm Backward");
     	}
     }
-    
-    public void setWinch(double distance){
-    	tDistance = distance;
-    	if(Math.abs(tDistance - winchEncoder.getDistance()) > 0.5){
-    		winch.set((tDistance - winchEncoder.getDistance()) * 0.01);
+    public void resetWinch(){
+    	winchEncoder.reset();
+    }
+        
+    public void winchIn(int ticks){
+    	//Encoder will start at 0
+   
+    	if(Math.abs(ticks - winchEncoder.get()) < 5){
+    		winch.set((ticks - winchEncoder.get()) * 0.01);
+    	}else{
+    		winch.set(0);
     	}
+    	
+    	
+    }
+    public void setWinch(double distance){
+    	
+
     }
     
     
