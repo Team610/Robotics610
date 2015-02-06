@@ -1,7 +1,10 @@
 package org.usfirst.frc.team614.robot.subsystems;
 
 import org.usfirst.frc.team614.robot.constants.ElectricalConstants;
+
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -11,6 +14,10 @@ public class CrossBow extends Subsystem {
 	
 	DoubleSolenoid arm;
 	DoubleSolenoid wing;
+	Talon winch;
+	Encoder winchEncoder;
+	
+	double tDistance;
 	
 	static CrossBow instance;
     
@@ -25,6 +32,8 @@ public class CrossBow extends Subsystem {
     private CrossBow(){
     	arm = new DoubleSolenoid (6,7);
     	wing = new DoubleSolenoid (0,1);
+    	winch = new Talon(9);
+    	winchEncoder = new Encoder(4,5);
     }
     
     public static CrossBow getInstance(){
@@ -45,13 +54,20 @@ public class CrossBow extends Subsystem {
     }
     
     public void setWing(boolean up){
-//    	if(up == ElectricalConstants.ARM_UP) {
-//    		wing.set(DoubleSolenoid.Value.kForward);
-//    		System.out.println("Arm Forward");
-//    	} else {
-//    		wing.set(DoubleSolenoid.Value.kReverse);
-//    		System.out.println("Arm Backward");
-//    	}
+    	if(up == ElectricalConstants.ARM_UP) {
+    		wing.set(DoubleSolenoid.Value.kForward);
+    		System.out.println("Arm Forward");
+    	} else {
+    		wing.set(DoubleSolenoid.Value.kReverse);
+    		System.out.println("Arm Backward");
+    	}
+    }
+    
+    public void setWinch(double distance){
+    	tDistance = distance;
+    	if(Math.abs(tDistance - winchEncoder.getDistance()) > 0.5){
+    		winch.set((tDistance - winchEncoder.getDistance()) * 0.01);
+    	}
     }
     
     
