@@ -11,11 +11,15 @@ public class Auto extends CommandGroup {
     	
     	addSequential(new A_ResetGyro());
     	addParallel(new A_CrossBow());
-    	addSequential(new A_DriveForward(51, 1));
-//    	addParallel(new A_DriveForward(0,1));
-    	addSequential(new A_DriveForward(-100, .5));
-    	addSequential(new A_CrossBowUp());
-    	addSequential(new A_DriveForward(49, 1));
+    	addSequential(new A_DriveForward(51, .50));
+    	addParallel(new A_DriveForward(0,1));
+    	
+    	addSequential(new A_DriveForward(-140, .125));
+    	addParallel((new A_CrossBowUp()));
+        addSequential((new A_WinchUp(2200)));
+    	
+    	addSequential(new A_DriveForward(0, 1));
+    	addSequential(new A_WingsDown());
     	
         // Add Commands here:
         // e.g. addSequential(new Command1());

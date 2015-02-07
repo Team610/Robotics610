@@ -29,7 +29,7 @@ public class A_CrossBow extends Command {
     protected void execute() {
     	
     	crossBow.setArm(ElectricalConstants.ARM_DOWN);
-    	crossBow.setWing(ElectricalConstants.ARM_UP);
+    	crossBow.setWing(ElectricalConstants.ARM_DOWN);
     		
     	finished = true;
     	

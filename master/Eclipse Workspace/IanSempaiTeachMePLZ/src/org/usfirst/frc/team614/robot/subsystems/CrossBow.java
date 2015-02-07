@@ -5,6 +5,7 @@ import org.usfirst.frc.team614.robot.constants.ElectricalConstants;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -32,7 +33,7 @@ public class CrossBow extends Subsystem {
     private CrossBow(){
     	arm = new DoubleSolenoid (6,7);
     	wing = new DoubleSolenoid (0,1);
-    	winch = new Talon(9);
+    	winch = new Talon(4);
     	winchEncoder = new Encoder(4,5);
     }
     
@@ -42,7 +43,15 @@ public class CrossBow extends Subsystem {
     	}
     	return instance;
     }
-    
+    public void winchUp(){
+   	 winch.set(0.5);
+    }
+    public void winchDown(){
+   	 winch.set(-1.0);
+    }
+    public void winchZero(){
+    	winch.set(0);
+    }
     public void setArm(boolean up){
     	if(up == ElectricalConstants.ARM_UP) {
     		arm.set(DoubleSolenoid.Value.kForward);
@@ -62,25 +71,21 @@ public class CrossBow extends Subsystem {
     		System.out.println("Arm Backward");
     	}
     }
+    public int getEncoder(){
+    	return winchEncoder.get();
+    }
     public void resetWinch(){
-    	winchEncoder.reset();
-    }
-        
-    public void winchIn(int ticks){
-    	//Encoder will start at 0
-   
-    	if(Math.abs(ticks - winchEncoder.get()) < 5){
-    		winch.set((ticks - winchEncoder.get()) * 0.01);
-    	}else{
-    		winch.set(0);
-    	}
-    	
-    	
-    }
-    public void setWinch(double distance){
-    	
-
-    }
+   	winchEncoder.reset();
+   }
+    
+//    
+//    public void setWinch(double ticks){
+//    	if(Math.abs(ticks - winchEncoder.getDistance()) < ticks){
+//    		winch.set((ticks - winchEncoder.getDistance()) * 0.01);
+//    	}else{
+//    		winch.set(0);
+//    	}
+//    }
     
     
 }
