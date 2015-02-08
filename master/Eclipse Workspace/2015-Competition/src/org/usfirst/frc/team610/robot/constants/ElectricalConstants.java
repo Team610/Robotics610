@@ -19,5 +19,9 @@ public class ElectricalConstants {
 	public static final double GYRO_D = 0.0125;
 	public static final double ENCODER_P = 0.02;
 	public static final int POT_ANALOGPORT = 0;
+	public static final double ELEVATOR_BOTTOM = 0.70;
+	public static final double ELEVATOR_MID = 0.2;
+	public static final double ELEVATOR_P  = 15; //15
+	public static final double ELEVATOR_I  = 0.003;//0.003
 
 }

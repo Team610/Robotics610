@@ -4,8 +4,8 @@ import org.usfirst.frc.team610.robot.constants.ElectricalConstants;
 
 import com.kauailabs.nav6.frc.IMUAdvanced;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -25,6 +25,7 @@ public class DriveTrain extends Subsystem {
 	Talon mid;
 	Encoder left;
 	Encoder right;
+	Compressor comp;
     
 	static DriveTrain instance;
 	
@@ -35,6 +36,10 @@ public class DriveTrain extends Subsystem {
 		leftFront = new Talon(ElectricalConstants.TALON_LEFT_FRONT);
 		leftBack = new Talon(ElectricalConstants.TALON_LEFT_BACK);
 		mid = new Talon(ElectricalConstants.TALON_MID);
+		
+		//Compressor
+		comp = new Compressor();
+		comp.start();
 		
 		//Encoders
 		left = new Encoder(2,3, true);

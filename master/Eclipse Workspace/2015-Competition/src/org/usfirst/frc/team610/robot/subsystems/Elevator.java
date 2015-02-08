@@ -33,6 +33,7 @@ public class Elevator extends Subsystem {
    
     
     public Elevator(){
+    	motorTalon = new Talon(ElectricalConstants.TALON_ELEVATOR);
     	pot = new AnalogPotentiometer(ElectricalConstants.POT_ANALOGPORT);
 		}   
     /*
@@ -53,6 +54,10 @@ public class Elevator extends Subsystem {
     	
     	}
     
+    }
+    public void setMotor(double upSpeed){
+    	//Send positive goes up
+    	motorTalon.set(-upSpeed);
     }
     public double getPot(){
     	return pot.get();
