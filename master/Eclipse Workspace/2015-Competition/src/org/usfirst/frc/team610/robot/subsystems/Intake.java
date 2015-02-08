@@ -37,12 +37,12 @@ public class Intake extends Subsystem {
 	public void setIntakeSpeed(int v){
 		//Can add battery management stuff later on.
 		//One of these will eventually be negative, have to wait for finished robot.
-		leftRoller.set(v);
-		rightRoller.set(-v);
+		leftRoller.set(-v);
+		rightRoller.set(v);
 		
 		
 	}
-	public void setIntakePosition(boolean open){
+	public void setIntakeOpen(boolean open){
 		isOpen = open;
 		if(isOpen){
 		intakeSol.set(DoubleSolenoid.Value.kForward);

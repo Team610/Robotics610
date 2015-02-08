@@ -19,6 +19,7 @@ public class T_Elevator extends Command {
 	double bottomPoint,midPoint;
 	int elevatorPosition = 0;
 	double iCounter;
+	double trim = 0;
     public T_Elevator() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -36,10 +37,22 @@ public class T_Elevator extends Command {
     	double curPot = elevator.getPot();
     	if(driver.getRawButton(InputConstants.BTN_A)){
     		elevatorPosition = 0;
+    		trim = 0;
     	}
     	if(driver.getRawButton(InputConstants.BTN_B)){
     		elevatorPosition = 1;
+    		trim = 0;
+
     	}
+    	if(driver.getRawButton(InputConstants.BTN_Y)){
+    		elevatorPosition = 2;
+    		trim = 0;
+
+    	}if(driver.getRawButton(InputConstants.BTN_X)){
+    		elevatorPosition = 3;
+    		trim = 0;
+    	}
+    	
     	
     	double error = 0;
     	double targetSetpoint = 0.7;
@@ -49,10 +62,17 @@ public class T_Elevator extends Command {
     		targetSetpoint = ElectricalConstants.ELEVATOR_BOTTOM;
     		break;
     	case 1:
-    		targetSetpoint = ElectricalConstants.ELEVATOR_MID;
+    		targetSetpoint = ElectricalConstants.ELEVATOR_ONETOTE;
+    		break;
+    	case 2:
+    		targetSetpoint = ElectricalConstants.ElEVATOR_MID;
+    		break;
+    	case 3:
+    		targetSetpoint = ElectricalConstants.ELEVATOR_TOTEPICKUP;
     		break;
     	
     	}
+    	
     	error = curPot - targetSetpoint;
     	if(error>0.005&&iCounter<1000){
     		iCounter++;
@@ -62,7 +82,7 @@ public class T_Elevator extends Command {
     	
 		elevator.setMotor(ElectricalConstants.ELEVATOR_P*error+iCounter*ElectricalConstants.ELEVATOR_I);
     	//System.out.println(curPot);
-    	System.out.println(elevator.getPot());
+     	System.out.println(elevator.getPot());
     	
     	
     	

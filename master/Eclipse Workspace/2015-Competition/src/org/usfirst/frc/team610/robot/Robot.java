@@ -4,8 +4,11 @@ package org.usfirst.frc.team610.robot;
 import org.usfirst.frc.team610.robot.commands.A_ForwardBack;
 import org.usfirst.frc.team610.robot.commands.D_SensorReadings;
 import org.usfirst.frc.team610.robot.commands.T_Elevator;
+import org.usfirst.frc.team610.robot.commands.T_Intake;
 import org.usfirst.frc.team610.robot.commands.T_KajDrive;
 import org.usfirst.frc.team610.robot.commands.T_ResetSensors;
+import org.usfirst.frc.team610.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team610.robot.subsystems.Elevator;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -28,6 +31,7 @@ public class Robot extends IterativeRobot {
     Command readings;
     Command reset;
     Command elevator;
+    Command intake;
     CommandGroup auto;
 
     /**
@@ -42,12 +46,14 @@ public class Robot extends IterativeRobot {
         reset = new T_ResetSensors();
         auto = new A_ForwardBack();
         elevator = new T_Elevator();
+        intake = new T_Intake();
         
     }
 	
 	public void disabledPeriodic() {
-		kajDrive.cancel();
-		readings.start();
+		
+    	Scheduler.getInstance().run();
+    	System.out.println(Elevator.getInstance().getPot());
 		
 	}
 
@@ -77,6 +83,7 @@ public class Robot extends IterativeRobot {
     	 readings.start();
          kajDrive.start();
          elevator.start();
+         intake.start();
     }
 
     /**
@@ -84,13 +91,13 @@ public class Robot extends IterativeRobot {
      * You can use it to reset subsystems before shutting down.
      */
     public void disabledInit(){
+    	readings.start();
 
     }
 
     /**
      * This function is called periodically during operator control
      */
-    
     
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
