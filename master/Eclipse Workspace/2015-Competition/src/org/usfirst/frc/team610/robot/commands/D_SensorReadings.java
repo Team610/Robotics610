@@ -1,6 +1,7 @@
 package org.usfirst.frc.team610.robot.commands;
 
 import org.usfirst.frc.team610.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team610.robot.subsystems.Elevator;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -12,9 +13,11 @@ public class D_SensorReadings extends Command {
 
 	DriveTrain driveTrain;
 	
+	Elevator elevator;
 	
     public D_SensorReadings() {
     	driveTrain = DriveTrain.getInstance();
+    	elevator =  Elevator.getInstance();
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -25,10 +28,11 @@ public class D_SensorReadings extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	System.out.println("Gyro: " + driveTrain.getYaw());
-    	System.out.println("Right Distance: " + driveTrain.getRightDistance());
-    	System.out.println("Left Distance: " + driveTrain.getLeftDistance());
-    	
+//    	System.out.println("Gyro: " + driveTrain.getYaw());
+//    	System.out.println("Right Distance: " + driveTrain.getRightDistance());
+//    	System.out.println("Left Distance: " + driveTrain.getLeftDistance());
+//    	
+    	//System.out.println("Pot" + elevator.getPot());
     	SmartDashboard.putNumber("Right Distance", driveTrain.getRightDistance());
 		SmartDashboard.putNumber("Left Distance", driveTrain.getLeftDistance());
 		SmartDashboard.putNumber("Gyro", driveTrain.getYaw());

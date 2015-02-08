@@ -16,24 +16,29 @@ public class Elevator extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     Talon motorTalon;
-    Potentiometer armPot;
-    AnalogInput aiPot;
+   static Elevator instance;
+    AnalogPotentiometer pot;
     //
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     
     }
+    public static Elevator getInstance(){
+    	if(instance == null){
+    		instance =  new Elevator();
+    	}
+    	return instance;
+    }
    
     
     public Elevator(){
-    	aiPot = new AnalogInput(ElectricalConstants.POT_ANALOGPORT);
-    	armPot = new AnalogPotentiometer(aiPot);
-    	motorTalon = new Talon(ElectricalConstants.TALON_ELEVATOR);
+    	pot = new AnalogPotentiometer(ElectricalConstants.POT_ANALOGPORT);
 		}   
     /*
      * 2-3 possible positions?
      */
+  
     public void setPos(int setting){
     	switch(setting){
     	case 1:
@@ -50,7 +55,7 @@ public class Elevator extends Subsystem {
     
     }
     public double getPot(){
-    	return armPot.get();
+    	return pot.get();
     }
     public void resetPot(){
     }

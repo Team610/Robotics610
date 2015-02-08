@@ -51,22 +51,22 @@ public class T_KajDrive extends Command {
     	double p = ElectricalConstants.GYRO_P;
     	double d = ElectricalConstants.GYRO_D;
     	double currentAngle = driveTrain.getYaw();
-    		
-    	while (currentAngle < -180) {
-			currentAngle += 360;
-		}
-		while (currentAngle > 180) {
-			currentAngle -= 360;
-		}
-		
-		error = tAngle - currentAngle;
-    	
-		difference = error - lastError;
-		
+//    		
+//    	while (currentAngle < -180) {
+//			currentAngle += 360;
+//		}
+//		while (currentAngle > 180) {
+//			currentAngle -= 360;
+//		}
+//		
+//		error = tAngle - currentAngle;
+//    	
+//		difference = error - lastError;
+//		
     	x = driver.getRawAxis(InputConstants.AXIS_X);
     	y = -driver.getRawAxis(InputConstants.AXIS_Y);
     	z = -driver.getRawAxis(InputConstants.AXIS_Z);
-    	
+//    	
     	x = x * x * x;
     	z = z * z * z;
     	
@@ -80,10 +80,10 @@ public class T_KajDrive extends Command {
 //    	if(driver.getRawAxis(InputConstants.AXIS_X) > 0.05){
 //        	error = driveTrain.getYaw();
 //    	}
-    	
-    	leftSpeed -= error * p + difference * d;
-    	rightSpeed += error * p + difference * d;	
-    	
+//    	
+//    	leftSpeed -= error * p + difference * d;
+//    	rightSpeed += error * p + difference * d;	
+//    	
     	
     	driveTrain.setLeft(leftSpeed);
     	driveTrain.setRight(rightSpeed);

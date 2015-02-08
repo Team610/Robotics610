@@ -1,5 +1,9 @@
 package org.usfirst.frc.team610.robot.commands;
 
+import org.usfirst.frc.team610.robot.OI;
+import org.usfirst.frc.team610.robot.subsystems.Intake;
+
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -7,8 +11,14 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class T_Intake extends Command {
 
+	OI oi;
+	Intake intake;
+	Joystick driver;
     public T_Intake() {
         // Use requires() here to declare subsystem dependencies
+    	oi = OI.getInstance();
+    	intake = Intake.getInstance();
+    	driver = oi.getDriver();
         // eg. requires(chassis);
     }
 
@@ -18,6 +28,7 @@ public class T_Intake extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+     
     }
 
     // Make this return true when this Command no longer needs to run execute()

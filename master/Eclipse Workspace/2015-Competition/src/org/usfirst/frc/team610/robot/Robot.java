@@ -3,6 +3,7 @@ package org.usfirst.frc.team610.robot;
 
 import org.usfirst.frc.team610.robot.commands.A_ForwardBack;
 import org.usfirst.frc.team610.robot.commands.D_SensorReadings;
+import org.usfirst.frc.team610.robot.commands.T_Elevator;
 import org.usfirst.frc.team610.robot.commands.T_KajDrive;
 import org.usfirst.frc.team610.robot.commands.T_ResetSensors;
 
@@ -22,10 +23,11 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
-
+	
     Command kajDrive;
     Command readings;
     Command reset;
+    Command elevator;
     CommandGroup auto;
 
     /**
@@ -39,12 +41,14 @@ public class Robot extends IterativeRobot {
         readings = new D_SensorReadings();
         reset = new T_ResetSensors();
         auto = new A_ForwardBack();
+        elevator = new T_Elevator();
         
     }
 	
 	public void disabledPeriodic() {
 		kajDrive.cancel();
 		readings.start();
+		
 	}
 
     public void autonomousInit() {
@@ -68,8 +72,11 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-    	
-        
+        auto.cancel();
+
+    	 readings.start();
+         kajDrive.start();
+         elevator.start();
     }
 
     /**
@@ -87,9 +94,7 @@ public class Robot extends IterativeRobot {
     
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        auto.cancel();
-        readings.start();
-        kajDrive.start();
+       
     }
     
     /**

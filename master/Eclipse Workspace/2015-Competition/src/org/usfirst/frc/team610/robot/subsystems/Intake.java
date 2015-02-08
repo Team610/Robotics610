@@ -27,7 +27,7 @@ public class Intake extends Subsystem {
 	}
     
 	//Returns the Intake	
-	public Intake getInstance(){
+	public static Intake getInstance(){
 		if(instance == null){
 			instance = new Intake();
 		}
@@ -38,7 +38,7 @@ public class Intake extends Subsystem {
 		//Can add battery management stuff later on.
 		//One of these will eventually be negative, have to wait for finished robot.
 		leftRoller.set(v);
-		rightRoller.set(v);
+		rightRoller.set(-v);
 		
 		
 	}
