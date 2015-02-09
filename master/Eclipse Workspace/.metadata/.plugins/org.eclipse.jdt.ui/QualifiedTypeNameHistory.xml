@@ -7,11 +7,12 @@
 <fullyQualifiedTypeName name="org.usfirst.frc.team610.robot.constants.InputConstants"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.DoubleSolenoid"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.DoubleSolenoid.Value"/>
-<fullyQualifiedTypeName name="org.usfirst.frc.team610.robot.subsystems.Elevator"/>
-<fullyQualifiedTypeName name="org.usfirst.frc.team610.robot.constants.ElectricalConstants"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.interfaces.Potentiometer"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.AnalogPotentiometer"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.AnalogInput"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team614.robot.constants.ElectricalConstants"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team610.robot.subsystems.Elevator"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Encoder"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team610.robot.subsystems.Bumper"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team610.robot.constants.ElectricalConstants"/>
 </qualifiedTypeNameHistroy>

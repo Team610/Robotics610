@@ -40,7 +40,8 @@ public class T_Intake extends Command {
     	if(driver.getRawButton(InputConstants.BTN_L2)){
     		//Negative
     		intake.setIntakeSpeed(-1);
- 
+    		
+    		
     	}else if(driver.getRawButton(InputConstants.BTN_R2)){
     		//Positive Intaking
     		intake.setIntakeSpeed(1);
