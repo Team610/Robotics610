@@ -10,8 +10,12 @@ public class A_ForwardBack extends CommandGroup {
     public  A_ForwardBack() {
     	
     	addSequential(new T_ResetSensors());
+    	addParallel(new A_BumperMove(true));
     	addSequential(new A_PositionMove(12, 1));
-    	addSequential(new A_PositionMove(12,0.5));
+    	addSequential(new A_PositionMove(-24,0.5));
+    	addSequential(new A_Winch(2000));
+    	addSequential(new A_BumperMove(false));
+    	
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

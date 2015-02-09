@@ -10,6 +10,7 @@ public class ElectricalConstants {
 	public static final int TALON_ELEVATOR = 0;
 	public static final int TALON_LEFT_ROLLER = 6;
 	public static final int TALON_RIGHT_ROLLER = 8;
+	public static final int TALON_WINCH = 7;
 	public static final int INTAKE_SOL_F = 3;
 	public static final int INTAKE_SOL_R = 2;	
 	public static final boolean CROSSBOW_DOWN = false;
