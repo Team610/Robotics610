@@ -35,7 +35,7 @@ public class DriveTrain extends Subsystem {
 		rightBack = new Talon(ElectricalConstants.TALON_RIGHT_BACK);
 		leftFront = new Talon(ElectricalConstants.TALON_LEFT_FRONT);
 		leftBack = new Talon(ElectricalConstants.TALON_LEFT_BACK);
-		mid = new Talon(ElectricalConstants.TALON_MID);
+
 		
 		//Compressor
 		comp = new Compressor();
@@ -80,11 +80,6 @@ public class DriveTrain extends Subsystem {
 		rightBack.set(speed);
 	}
 	
-	//Set mid speed
-	public void setMid(double speed){
-		mid.set(speed);
-	}
-	
 	
 	//Gyro
 	public double getYaw(){
@@ -99,18 +94,18 @@ public class DriveTrain extends Subsystem {
 	//Get Average Encoder
 	public double getAvgDistance(){
 		double average, a, b;
-		a = left.getDistance() / ElectricalConstants.ENCODER_INCHES ;
-		b = right.getDistance() / ElectricalConstants.ENCODER_INCHES;
+		a = left.getDistance() * ElectricalConstants.ENCODER_INCHES;
+		b = right.getDistance() * ElectricalConstants.ENCODER_INCHES;
 		average = (a + b) / 2;
 		return average;
 	}
 	
 	//Get Right & Left Encoders
 	public double getRightDistance(){
-		return right.getDistance() / ElectricalConstants.ENCODER_INCHES;
+		return right.getDistance() * ElectricalConstants.ENCODER_INCHES;
 	}
 	public double getLeftDistance(){
-		return left.getDistance() / ElectricalConstants.ENCODER_INCHES;
+		return left.getDistance() * ElectricalConstants.ENCODER_INCHES;
 	}
 	
 	//Reset encoders

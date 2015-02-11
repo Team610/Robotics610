@@ -35,7 +35,7 @@ public class D_SensorReadings extends Command {
 //    	System.out.println("Right Distance: " + driveTrain.getRightDistance());
 //    	System.out.println("Left Distance: " + driveTrain.getLeftDistance());
 //    	
-    	System.out.println("Pot" + elevator.getPot());
+//    	System.out.println("Pot" + elevator.getPot());
     	
     	SmartDashboard.putNumber("Right Distance", driveTrain.getRightDistance());
 		SmartDashboard.putNumber("Left Distance", driveTrain.getLeftDistance());

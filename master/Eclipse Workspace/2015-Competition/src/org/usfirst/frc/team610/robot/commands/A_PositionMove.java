@@ -13,11 +13,13 @@ public class A_PositionMove extends Command {
 
 	DriveTrain driveTrain;
 	double angle;
-	double lastError = 0;
+	double lastGyroError = 0;
+	double lastEncoderError = 0;
 	double tInches;
 	double cap;
 	double tAngle;
-	double error;
+	double gyroError;
+	double encoderError;
 	
 	public A_PositionMove(double tInches, double cap) {
 
@@ -33,7 +35,7 @@ public class A_PositionMove extends Command {
 	protected void initialize() {
 		driveTrain.resetEncoders();
 		tAngle = driveTrain.getYaw();
-		error = driveTrain.getYaw();
+		gyroError = driveTrain.getYaw();
 		setTimeout(0);
 		if (tInches == 0) {
 			setTimeout(90);
@@ -45,41 +47,35 @@ public class A_PositionMove extends Command {
 		double p = ElectricalConstants.GYRO_P;
 		double d = ElectricalConstants.GYRO_D;
 		double leftSpeed, rightSpeed;
+		double diffGyroError, diffEncoderError;
 		
-		double diffError;
-		System.out.println("Gyro: " + driveTrain.getYaw());
-
-		rightSpeed = Math.min(cap, (tInches - driveTrain.getAvgDistance())
-				* ElectricalConstants.ENCODER_P);
-		leftSpeed = Math.min(cap, (tInches - driveTrain.getAvgDistance())
-				* ElectricalConstants.ENCODER_P);
-
-
-		error = tAngle - driveTrain.getYaw();
+		encoderError = tInches - driveTrain.getAvgDistance();
+		diffEncoderError = encoderError - lastEncoderError;
 		
-		diffError = error - lastError;
+		System.out.println("Encoder" + driveTrain.getAvgDistance());
+		SmartDashboard.putNumber("Encoder", driveTrain.getAvgDistance());
 		
-		if(Math.abs(driveTrain.getYaw()) > 0.2){
-	    	leftSpeed -= error * p + diffError * d;
-	    	rightSpeed += error * p + diffError * d;	
+
+		rightSpeed = Math.min(cap, encoderError*ElectricalConstants.ENCODER_P - diffEncoderError * d);
+		leftSpeed = Math.min(cap, encoderError*ElectricalConstants.ENCODER_P - diffEncoderError * d);
+
+
+		gyroError = tAngle - driveTrain.getYaw();
+		
+		diffGyroError = gyroError - lastGyroError;
+		
+	    leftSpeed -= gyroError * p + diffGyroError * d;
+	    rightSpeed += gyroError * p + diffGyroError * d;	
 	    	
-		}
+		
     	
     	
-		if (rightSpeed > cap) {
-			leftSpeed -= rightSpeed - cap;
-		} else if (leftSpeed > cap) {
-			rightSpeed -= leftSpeed - cap;
-		} else if (rightSpeed < -cap) {
-			leftSpeed -= rightSpeed + cap;
-		} else if (leftSpeed < -cap) {
-			rightSpeed -= leftSpeed + cap;
-		}
 
 		driveTrain.setLeft(leftSpeed);
 		driveTrain.setRight(rightSpeed);
 
-		lastError = error;
+		lastGyroError = gyroError;
+		lastEncoderError = encoderError;
 
 	}
 
@@ -87,23 +83,26 @@ public class A_PositionMove extends Command {
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		if (tInches == 0) {
-			return isTimedOut();
-		} else {
-			if (Math.abs(driveTrain.getAvgDistance() - tInches) < 5) {
-				tick++;
-			} else {
-				tick = 0;
-			}
-
-			if (tick > 20) {
-				driveTrain.setLeft(0);
-				driveTrain.setRight(0);
-				return true;
-			} else {
-				return false;
-			}
-		}
+		return false;
+//		if (tInches == 0) {
+//			return isTimedOut();
+//		} else {
+//			if (Math.abs(driveTrain.getAvgDistance() - tInches) < 5) {
+//				tick++;
+//			} else {
+//				tick = 0;
+//			}
+//
+//			if (tick > 20) {
+//				driveTrain.setLeft(0);
+//				driveTrain.setRight(0);
+//				System.out.println("A_Position Finished");
+//				return true;
+//				
+//			} else {
+//				return false;
+//			}
+//		}
 	}
 
 	// Called once after isFinished returns true

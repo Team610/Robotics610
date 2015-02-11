@@ -8,12 +8,12 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class A_Winch extends Command {
-	
+
 	Bumper bumper;
+	boolean isFinished;
 	double distance;
 	
     public A_Winch(double distance) {
-    	
     	bumper = Bumper.getInstance();
     	this.distance = distance;
         // Use requires() here to declare subsystem dependencies
@@ -27,16 +27,18 @@ public class A_Winch extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	bumper.setWinch(distance);
+    	if(bumper.getWinchEncoder() <= distance){
+    		bumper.setWinch(distance);
+    		isFinished = false;
+    	} else {
+    		isFinished = true;
+    	}
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(bumper.getWinchDistance() >= 2000){
-        	return true;
-        } else {
-        	return false;
-        }
+        return isFinished;
     }
 
     // Called once after isFinished returns true

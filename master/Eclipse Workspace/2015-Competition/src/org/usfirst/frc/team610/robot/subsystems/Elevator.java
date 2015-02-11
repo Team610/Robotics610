@@ -40,21 +40,7 @@ public class Elevator extends Subsystem {
      * 2-3 possible positions?
      */
   
-    public void setPos(int setting){
-    	switch(setting){
-    	case 1:
-    		setUpPos();
-    	
-    	case 2:
-    		setMidPos();
-    	case 3:
-    		setLowPos();
-    	default:
-    		setLowPos();
-    	
-    	}
-    
-    }
+  
     public void setMotor(double upSpeed){
     	//Send positive goes up
     	motorTalon.set(-upSpeed);
